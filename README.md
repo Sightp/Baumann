@@ -4,5 +4,5 @@ Primera edición
 
 Integrantes
 
-Pablo Vásquez 
-Marcelo Yévenes
+Pablo Vásquez \n
+Marcelo Yévenes\n David Perez
