@@ -5,13 +5,8 @@ Primera edición
 
 Integrantes
 
-
-Pablo Vásquez
-
-Marcelo Yevenes
-
-Gerson Pereira
-
-David Perez
-
-Luis Pastén
++Pablo Vásquez
++Marcelo Yevenes
++Gerson Pereira
++David Perez
++Luis Pastén
