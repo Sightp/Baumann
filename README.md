@@ -5,5 +5,4 @@ Primera edición
 Integrantes
 
 Pablo Vásquez
-
 Marcelo Yevenes
