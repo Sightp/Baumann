@@ -5,7 +5,6 @@ Primera edición
 
 Integrantes: 
 
-
 Pablo Vásquez  ( https://github.com/pblov )
 Luis Pasten
 David Perez
