@@ -25,13 +25,54 @@
             </div>
         </div>
 
+      
+        
         <div class="row">
-                <h2>Ordenes actuales</h2>
+                <div align="right">
+                    <input align="right" type="text" placeholder="Buscar" class="icon-search"">
+                </div>     
         </div>  
 
- 
+        <div class="row">
+                <div class="col-lm-7">
+                        <h2>Ordenes Actuales</h2>
+                </div>
+            
+                <table class="table table-hover table-condensed table-bordered">
+  
+                    <tr>  
+                        <td>Código Orden</td>
+                        <td>Rut Cliente</td>
+                        <td>Código Producto</td>
+                        <td>Nombre</td>
+                        <td>Estado Actual</td>
+                        <td>Datos Orden</td>
+                        <td>Archivo Asociado</td>
+                    </tr>
+              <tbody id="tasks"></tbody>
+            </table>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-4">
+            Codigo orden:
+            <input type="text" class="form-control" placeholder="Código">
+            
+                
+            </div>
+            <div class="col-lg-4">
+                    Seleccionar estado
+                    <select class="form-control" id="exampleFormControlSelect1">
+                            <option>Estado 1</option>
+                        
+                    </select>
+            </div>
+        </div>
+
+
+
     </div>
- 
+    
 
 
   
