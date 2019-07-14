@@ -1,8 +1,8 @@
 <?php 
 		function conexion(){
-			$servidor="146.83.194.142";
-			$usuario="grupo4";
-			$password="grupo4optica";
+			$servidor="localhost";
+			$usuario="root";
+			$password="";
 			$bd="grupo4bd";
 
 			$conexion=mysqli_connect($servidor,$usuario,$password,$bd);
