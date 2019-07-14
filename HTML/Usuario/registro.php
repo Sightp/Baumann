@@ -53,7 +53,7 @@
                
             <div class="col-lg-6">
                 <div class="form-group"> 
-                    <input type="text" class="form-control" placeholder="Télefono:">
+                    <input type="text" class="form-control" placeholder="Télefono:" id="idtelefono">
                 </div>
             </div>
         </div>
@@ -62,7 +62,7 @@
         <div class="form-group">          
             <div class="row">
                 <div class="col-lg-12">
-                    <input type="text" class="form-control" placeholder="Dirección:">
+                    <input type="text" class="form-control" placeholder="Dirección:" id="iddireccion">
                 </div>   
             </div>
         </div>
@@ -71,9 +71,9 @@
         <div class="row">
             <div class="col-lg-6">
                 <div class="form-group">  
-                    <label>País</label>
-                    <select class="form-control">
-                        <option>Opcion 1</option>
+                    <label>Región</label>
+                    <select class="form-control" id="idregion">
+                        
                     </select>
                 </div>
             </div>
@@ -81,7 +81,7 @@
             <div class="col-lg-6">
                 <div class="form-group">
                     <label>Ciudad</label> 
-                    <select class="form-control">
+                    <select class="form-control" id="idciudad">
                         <option>Opcion 1</option>
                     </select>
                 </div>
@@ -92,7 +92,7 @@
         <div class="row">
             <div class="col-lg-6">
                 <div class="form-group">  
-                    <input type="password" class="form-control" placeholder="Contraseña:">
+                    <input type="password" class="form-control" placeholder="Contraseña:" id="idpass">
                 </div>
             </div>
                    
@@ -115,29 +115,41 @@
         <div class="row">
             <div class="col-lg-6">
                 <div class="form-group">  
-                        <button  class="btn btn-block btn-success"  type="submit">Registrar </button>
+                        <button  class="btn btn-block btn-success"  type="submit" id="guardarnuevo">Registrar </button>
                 </div>
             </div>
                        
             <div class="col-lg-6">
                 <div class="form-group">
-                        <button  class="btn btn-block btn-success"  type="submit">Iniciar Sesión </button>
+                        <button  class="btn btn-block btn-primary"  type="submit">Iniciar Sesión </button>
                 </div>
             </div>
         </div>
-        
-
-    
-
-
-            
-       
-
-
-        
-
     </div>
-       
 
-</body>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('#guardarnuevo').click(function(){
+              nombre=$('#nombre').val();
+              apellidoP=$('#apellidoP').val();
+              apellidoM=$('#apellidoM').val();
+              rut=$('#idrut').val();
+              correo=$('#idcorreo').val();
+              telefono=$('#idtelefono').val();
+              direccion=$('#iddireccion').val();
+              region=document.getElementById("idregion").value;
+              ciudad=document.getElementById("idciudad").value;
+              pass=$('#idpass').val();
+              agregardatos(nombre,apellido,email,telefono);
+            }); 
+        });
+    </script>
+
+    <script language="JavaScript" type="text/JavaScript">
+        $(document).ready(function(){
+                console.log("cargar");
+                $("#idregion").load('../../PHP/Usuario/llenarregion.php');
+        });
+    </script>
+
 </html>
