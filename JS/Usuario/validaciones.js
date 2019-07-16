@@ -1,6 +1,5 @@
 
 
-
 $(document).ready(function() {
 
 
@@ -46,7 +45,7 @@ $("#apelllidoM").blur(function() {
     } 	
 });
 
-//VALIDAR RUT// 
+//VALIDAR RUT// S
 $("#idrut").blur(function() {
      
     var Objeto;
@@ -135,7 +134,37 @@ $("#idcorreo").blur(function() {
     } 	
 });
 
+//VALIDAR QUE LAS CONTRASEÑAS COINCIDAN//
+$("#idpass").blur(function() {
+  var pass;
+  pass=$("#idpass").val();
+  pass2=$("#idpassconfirmacion").val();
+  
+  if(pass!=pass2){
+    console.log("no coinciden las contraseñas");
+    return true;
+  }else 
+  {
+    return false;
+  }
+  
+});
 
+/VALIDAR QUE LAS CONTRASEÑAS COINCIDAN//
+$("#idpassconfirmacion").blur(function() {
+  var pass;
+  pass=$("#idpass").val();
+  pass2=$("#idpassconfirmacion").val();
+  
+  if(pass!=pass2){
+    console.log("no coinciden las contraseñas");
+    return true;
+  }else 
+  {
+    return false;
+  }
+  
+});
 
 
 
@@ -144,4 +173,4 @@ $("#idcorreo").blur(function() {
 
   
       
-  });
+});
