@@ -19,9 +19,9 @@ function agregardatos(rut,nombre,apellidoP,apellidoM,pass,direccion,telefono,cor
 		data:cadena,
 		success:function(r){
 			if(r==1){
-				//alertify.success("Valores agregados con exito");
+				alertify.success("Registro exitoso");
 			}else{
-				//alertify.error("Fallo al agregar los datos");
+				alertify.error("Fallo al registrarse");
 			}
 		}
 	});
