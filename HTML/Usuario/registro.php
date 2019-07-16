@@ -7,6 +7,9 @@
     <link href="../../Librerias/Boostrap/css/bootstrap.min.css" rel="stylesheet">
     <script src="../../Librerias/js/jquery-3.2.1.min.js"></script>
     <script src="../../JS/Usuario/validaciones.js"></script> 
+    <script src="../../JS/Usuario/registrar.js"></script> 
+    
+   
 
     <title>Registro Cliente</title>
 </head>
@@ -34,7 +37,7 @@
            
             <div class="col-lg-6">
                 <div class="form-group"> 
-                    <input type="text" class="form-control" placeholder="Apellido Materno:" id="apelllidoM"> 
+                    <input type="text" class="form-control" placeholder="Apellido Materno:" id="apellidoM"> 
                 </div>
             </div>
         </div>
@@ -82,7 +85,7 @@
                 <div class="form-group">
                     <label>Ciudad</label> 
                     <select class="form-control" id="idciudad">
-                        <option>Opcion 1</option>
+                        
                     </select>
                 </div>
             </div>
@@ -98,7 +101,7 @@
                    
             <div class="col-lg-6">
                 <div class="form-group"> 
-                    <input type="password" class="form-control" placeholder="Repita Contraseña:">
+                    <input type="password" class="form-control" placeholder="Repita Contraseña:" id="idpassconfirmacion">
                 </div>
             </div>
         </div>
@@ -127,6 +130,7 @@
         </div>
     </div>
 
+    <!-- ENVIAR DATOS PARA INSERTAR EN LA BD-->
     <script type="text/javascript">
         $(document).ready(function(){
             $('#guardarnuevo').click(function(){
@@ -137,19 +141,44 @@
               correo=$('#idcorreo').val();
               telefono=$('#idtelefono').val();
               direccion=$('#iddireccion').val();
-              region=document.getElementById("idregion").value;
               ciudad=document.getElementById("idciudad").value;
               pass=$('#idpass').val();
-              agregardatos(nombre,apellido,email,telefono);
+              agregardatos(rut,nombre,apellidoP,apellidoM,pass,direccion,telefono,correo,ciudad);
             }); 
         });
     </script>
 
+    <!--LLENAR SELECT PARA MOSTRAR REGION-->
     <script language="JavaScript" type="text/JavaScript">
         $(document).ready(function(){
-                console.log("cargar");
                 $("#idregion").load('../../PHP/Usuario/llenarregion.php');
         });
     </script>
+
+    <!--CARGAR LA CIUDAD DEPENDIENDO DE LA REGION-->
+    <script type="text/javascript">
+	$(document).ready(function(){
+		$('#idregion').val(1);
+		recargarLista();
+
+		$('#idregion').change(function(){
+			recargarLista();
+		});
+    })
+    </script>
+
+    <script type="text/javascript">
+	function recargarLista(){
+		$.ajax({
+			type:"POST",
+			url:"../../PHP/Usuario/llenarciudad.php",
+			data:"region=" + $('#idregion').val(),
+			success:function(r){
+				$('#idciudad').html(r);
+			}
+		});
+	}
+    </script>
+
 
 </html>
