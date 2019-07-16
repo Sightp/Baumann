@@ -1,13 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="../../Librerias/Boostrap/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="../../Librerias/alertifyjs/css/themes/default.css">
     <script src="../../Librerias/js/jquery-3.2.1.min.js"></script>
     <script src="../../JS/Usuario/validaciones.js"></script> 
-    <script src="../../JS/Usuario/registrar.js"></script> 
+    <script src="../../JS/Usuario/registrar.js"></script> 	
+    <link rel="stylesheet" type="text/css" href="../../Librerias/alertifyjs//css/alertify.css">
+    <script src="../../Librerias/alertifyjs/alertify.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+
     
    
 
@@ -23,7 +28,8 @@
 
        
         <div class="form-group vacio">   
-            <input type="text" class="form-control" placeholder="Nombre" id="nombre">    
+            <input type="text" class="form-control" placeholder="Nombre(*):" id="nombre">    
+            <div class="error nomvacio">El campo nombre no puede estar vacío</div>
         </div>
         
        
@@ -31,26 +37,31 @@
         <div class="row">
             <div class="col-lg-6">
                 <div class="form-group">  
-                    <input type="text" class="form-control" placeholder="Apellido Paterno:" id="apellidoP">
+                    <input type="text" class="form-control" placeholder="Apellido Paterno(*):" id="apellidoP">
+                    <div class="error patvacio">El campo apellido paterno no puede estar vacío</div>
                 </div>
             </div>
            
             <div class="col-lg-6">
                 <div class="form-group"> 
-                    <input type="text" class="form-control" placeholder="Apellido Materno:" id="apellidoM"> 
+                    <input type="text" class="form-control" placeholder="Apellido Materno(*):" id="apellidoM">
+                    <div class="error matvacio">El campo apellido materno no puede estar vacío</div> 
                 </div>
             </div>
         </div>
 
         <div class="form-group">          
-            <input type="text" class="form-control" placeholder="Rut:" id="idrut">   
+            <input type="text" class="form-control" placeholder="Rut(*):" id="idrut">   
+            <div class="error rutvacio">El rut no puede estar vacío</div> 
+            <div class="error rutinvalido">El rut no es válido</div>
         </div>
 
         
         <div class="row">
             <div class="col-lg-6">
                 <div class="form-group">  
-                    <input type="email" class="form-control" placeholder="Correo:" id="idcorreo">
+                    <input type="email" class="form-control" placeholder="Correo(*):" id="idcorreo">
+                    <div class="error emailvacio">El campo correo no puede estar vacío</div> 
                  </div>
             </div>
                
@@ -95,14 +106,18 @@
         <div class="row">
             <div class="col-lg-6">
                 <div class="form-group">  
-                    <input type="password" class="form-control" placeholder="Contraseña:" id="idpass">
+                    <input type="password" class="form-control" placeholder="Contraseña(*):" id="idpass">
+                    <div class="error passvacio">El campo contraseña no puede estar vacío</div>
+                    <div class="error passigual">No coinciden las contraseñas</div>  
                 </div>
+                
             </div>
                    
             <div class="col-lg-6">
                 <div class="form-group"> 
-                    <input type="password" class="form-control" placeholder="Repita Contraseña:" id="idpassconfirmacion">
+                    <input type="password" class="form-control" placeholder="Repita Contraseña(*):" id="idpassconfirmacion">
                 </div>
+                
             </div>
         </div>
 
@@ -118,7 +133,7 @@
         <div class="row">
             <div class="col-lg-6">
                 <div class="form-group">  
-                        <button  class="btn btn-block btn-success"  type="submit" id="guardarnuevo">Registrar </button>
+                        <button  class="btn btn-block btn-success"  type="submit" id="guardarnuevo" title="Debe completar todos los campos para poder registrarse">Registrar </button>
                 </div>
             </div>
                        
@@ -127,6 +142,7 @@
                         <button  class="btn btn-block btn-primary"  type="submit">Iniciar Sesión </button>
                 </div>
             </div>
+            <div class="error">(*)Campos obligatorios</div>
         </div>
     </div>
 
