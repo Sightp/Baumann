@@ -12,6 +12,13 @@
     <script src="../../Librerias/Boostrap/js/bootstrap.js"></script>
     <script src="../../Librerias/select2/js/select2.js"></script>
     <script src="../../JS/Laboratorio/funciones.js"></script>
+    
+    <script src="../../Librerias/datable/jquery.dataTables.min.js"></script>
+    <script src="../../Librerias/datable/dataTables.bootstrap.min.js"></script>
+    
+    
+    <link href="../../Librerias/datable/dataTables.bootstrap.min.css" rel="stylesheet"> 
+
 
     <link rel="stylesheet" type="text/css" href="../../Librerias/alertifyjs/css/themes/default.css">
     <link rel="stylesheet" type="text/css" href="../../Librerias/alertifyjs/css/alertify.css">
