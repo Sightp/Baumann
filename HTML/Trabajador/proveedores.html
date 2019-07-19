@@ -1,153 +1,134 @@
+<?php
+  session_start();
+  unset($_SESSION['consulta']);
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
-
-      
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
-
-
-
     <link href="../../Librerias/Boostrap/css/bootstrap.min.css" rel="stylesheet"> 
     <link href="../../Librerias/select2/css/select2.css" rel="stylesheet"> 
 
     <script src="../../Librerias/js/jquery-3.2.1.min.js"></script>
     <script src="../../Librerias/Boostrap/js/bootstrap.js"></script>
-    <script src="../../JS/app.js"></script>
+    <script src="../../Librerias/select2/js/select2.js"></script>
+    <script src="../../JS/proveedor/agregar_proveedor.js"></script>
+    <link rel="stylesheet" type="text/css" href="../../Librerias/alertifyjs/css/themes/default.css">
+    <link rel="stylesheet" type="text/css" href="../../Librerias/alertifyjs//css/alertify.css">
+    <script src="../../Librerias/alertifyjs/alertify.js"></script>
 
- 
 
-
-    <title>Proveedor</title>
-
+    <title>Administrar Proveedores</title>
 </head>
 <body>
 
-    <nav class="navbar navbar-expend-lg navbar-dark bg-dark">
-        <a href="#" class="navbar-brand">Administrador de Proveedor</a>
-        <ul class="navbar-nav ml-auto">
-            <form class="form-inline my-2 my-lg-0">
-
-            <input type="search" id="search" class="form-control mr-sm-2" placeholder="Busca tu proveedor">
-            <button class="btn btn-success my-2 my-sm-0" type="submit">
-                Buscar
-            </button>
+    <div class="container">
 
 
-            </form>
-
-        </ul>
-
-
-    </nav>
-
-     <div class="container">
-
-    
+      
+        <!--BARRA BUSCADORA-->
+        <div id="buscador"></div>
 
         <div class="row">
-
-                <div class="col-md-8">
-                
-                        
-
-
-                                            <!-- FORMULARIO --> 
-                        
-                        <form id="formulario2">
-
-                             <div class="form-group">
-                               <input type="text" class="form-control" placeholder="RUT :" id="rut_proveedor">
-                            </div>
-                             <div class="form-group">
-                              <input type="text" class="form-control" placeholder="NOMBRE :" id="nombre_proveedor">
-                             </div>
-                             <div class="form-group">
-                                <input type="text" class="form-control" placeholder="TELEFONO :" id="telefono_proveedor">
-                            </div>
-                            <div class="form-group">
-                                <input type="text" class="form-control" placeholder="CORREO :" id="correo_telefono">
-                            </div>
-                              
-                            <div class="from-group">
-                                <button  class="btn btn-block  btn-danger "  id="boton"  type="submit">GUARDAR</button>
-                            </div>
-                                
-                        </form>
-
-                                    <!-- fin formulario-->
-
-
-
-                                                        
-
-
-                                                            
-
-
-
-
-
-
-
-
-
-                    
-                            <div class="form-group">
-
-                                    <table class="table table-striped" >
-                                            <thead> 
-                                              <tr> 
-                                                <th>RUT</th> 
-                                                <th>NOMBRE</th>
-                                                <th>TELEFONO</th> 
-                                                <th>CORREO</th>
-                                                <th>EDITAR</th> 
-                                                <th>ELIMINAR</th>
-                                            
-                                              </tr> 
-                                            </thead>
-                                            <tbody id="marcas">
-                              
-                      
-                                            </tbody>
-                                          </table>
-                                            
-                                        </div>
-
-
-
-                            </div>
-
-
-
-
-                        
-
-                      
-
-
-
-                        
-
-            
-                
-
+                <div class="col-lm-7">
+                        <h2>Proveedores Actuales</h2>
                 </div>
-
-
-                
+            
+                <div id="tabla"></div>
         </div>
+    </div>
+<!-- MODAL PARA AGREGAR DATOS-->
+<div class="modal fade" id="modalNuevo" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h3 class="modal-title" align="center" id="exampleModalLabel">Agregar nuevo proveedor</h3>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+                <!--DATOS QUE SEÁN AGREGADOS-->
+                Rut:
+                <input type="text" class="form-control" id="rut_proveedor" placeholder="Rut">
+                Nombre :
+                <input type="text" id="nombre_proveedor"class="form-control" placeholder="Nombre Proveedor:">
+                Teléfono:
+                <input type="text" class="form-control" id="telefono_proveedor" placeholder="Teléfono">
+                Correo :
+                <input type="text" id="correo_proveedor"class="form-control" placeholder="Correo:">
+                
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-primary" data-dismiss="modal" id="agregarnuevo">Agregar</button>
+            </div>
+          </div>
+        </div>
+      </div>
 
-     </div>
+  <!-- MODAL PARA EDITAR DATOS-->
+  <div class="modal fade" id="modalEdicion" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 class="modal-title" align="center" id="exampleModalLabel">Editar Proveedor</h3>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
 
 
+            <!--DATOS DE ORDEN QUE SERÁN EDITADOS-->
+            Rut:
+            <input type="text" class="form-control" id="rut_proveedor2" placeholder="Rut" disabled>
+            Nombre :
+            <input type="text" id="nombre_proveedor2"class="form-control" placeholder="Nombre Proveedor:">
+            Teléfono:
+            <input type="text" class="form-control" id="telefono_proveedor2" placeholder="Teléfono">
+            Correo :
+            <input type="text" id="correo_proveedor2"class="form-control" placeholder="Correo:">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-warning" data-dismiss="modal" id="actualizardatos">Editar</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
-              
-           
 </body>
 </html>
+
+<!--SCRIP PARA CARGAR LA TABLA-->
+<script type="text/javascript">
+    $(document).ready(function (){
+        $('#tabla').load('../../PHP/proveedor/tabla.php');
+        $('#buscador').load('../../PHP/proveedor/buscador.php');
+    });
+
+</script>
+
+
+<!--AGREGAR Marca-->
+<script language="JavaScript" type="text/JavaScript">
+    $(document).ready(function(){
+            $("#agregarnuevo").click(function(){
+              codigo=$('#rut_proveedor').val();
+              nombre=$('#nombre_proveedor').val();
+              telefono=$('#telefono_proveedor').val();
+              correo=$('#correo_proveedor').val();
+              agregardatos(codigo,nombre,telefono,correo);
+            });
+            $("#actualizardatos").click(function(){
+
+            
+
+                actualizaDatos();
+            });  
+
+    });
+</script>
