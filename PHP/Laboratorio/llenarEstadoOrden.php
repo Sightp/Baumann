@@ -5,7 +5,9 @@
     
 
     $sql = "SELECT EST_ID, EST_DESCRIPCION
-    FROM ESTADO_ORDEN";
+    FROM ESTADO_ORDEN
+    WHERE ESTADO_ORDEN.EST_ID='2' OR ESTADO_ORDEN.EST_ID='3'
+    OR ESTADO_ORDEN.EST_ID='4' OR ESTADO_ORDEN.EST_ID='5' OR ESTADO_ORDEN.EST_ID='6'";
 
     $result=mysqli_query($conexion,$sql);
    
