@@ -18,7 +18,7 @@
     <script src="../../Librerias/select2/js/select2.js"></script>
     <script src="../../JS/ADM/agregar_region.js"></script>
     <link rel="stylesheet" type="text/css" href="../../Librerias/alertifyjs/css/themes/default.css">
-    <link rel="stylesheet" type="text/css" href="../../Librerias/alertifyjs//css/alertify.css">
+    <link rel="stylesheet" type="text/css" href="../../Librerias/alertifyjs/css/alertify.css">
     <script src="../../Librerias/alertifyjs/alertify.js"></script>
 
 
