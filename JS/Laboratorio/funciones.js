@@ -15,8 +15,7 @@ function actualizadatos(){
     cadena="codigo=" + codigo + 
             "&estado=" + estado;
     
-    console.log(codigo);
-    console.log(estado);
+    
 
 
     $.ajax({
@@ -34,3 +33,4 @@ function actualizadatos(){
     });   
 
 }
+
