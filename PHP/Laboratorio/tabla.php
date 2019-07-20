@@ -45,7 +45,7 @@
         }
 
     }else{
-        $sql = "SELECT ORDEN.ORD_ID, CLIENTE.CLI_RUT, PRODUCTO.PRO_ID, PRODUCTO.PRO_NOMBRE, ORDEN.ORD_DATOS, ORDEN.DOC_OR, ESTADO_ORDEN.EST_DESCRIPCION, ESTADO_ORDEN.EST_ID
+        $sql = "SELECT ORDEN.ORD_ID, CLIENTE.CLI_RUT, PRODUCTO.PRO_ID, PRODUCTO.PRO_NOMBRE, ORDEN.ORD_DATOS, ORDEN.DOC_OR, ESTADO_ORDEN.EST_DESCRIPCION, ESTADO_ORDEN.EST_ID, BOLETA.BOL_NUMERO
         FROM ORDEN
         JOIN BOLETA ON BOLETA.BOL_NUMERO=ORDEN.BOL_NUMERO
         JOIN CLIENTE on CLIENTE.CLI_RUT=BOLETA.CLI_RUT
@@ -62,6 +62,8 @@
     //INICIO DEL WHILE PARA MOSTRAR DATOS TABLA//
     while ($ver=mysqli_fetch_row($result)) {
     $datos=$ver[0]."||".$ver[3]."||".$ver[7];
+
+   
     ?> 
  
         <tr>  
@@ -70,7 +72,15 @@
             <td><?php echo $ver[2]?></td>
             <td><?php echo $ver[3]?></td>
             <td><?php echo $ver[4]?></td>
-            <td><?php echo $ver[5]?></td>
+
+
+            <td>
+            <?php
+            echo '<form method="post" action="../../PHP/Laboratorio/descargar.php?&rut='.$ver[1].'&boleta='.$ver[8].'&prducto='.$ver[2].'&orden='.$ver[0].'" enctype="multipart/form-data">';
+            echo '<input type="submit" value="DESCARGAR" class="btn btn-primary"/>';
+            
+            ?>
+            </td>
             <td><?php echo $ver[6]?></td>
             <td>
                     <button class="btn btn-warning glyphicon glyphicon-pencil" data-toggle="modal" data-target="#modalEdicion" onclick="agregaform('<?php echo $datos?>')" ></button>
@@ -82,6 +92,8 @@
   ?>
 </tbody>
 </table>
+
+
 
 <script language="JavaScript" type="text/JavaScript">
     $(document).ready(function(){
@@ -115,5 +127,3 @@
         });
     });
 </script>
-
-
