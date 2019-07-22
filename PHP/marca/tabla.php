@@ -34,14 +34,14 @@
 					if($_SESSION['consulta'] > 0){
 						$idp=$_SESSION['consulta'];
 						$sql="SELECT MAR_ID,MAR_NOMBRE 
-						FROM marca_producto where MAR_ID='$idp'";
+						FROM MARCA_PRODUCTO where MAR_ID='$idp'";
 					}else{
 						$sql="SELECT MAR_ID,MAR_NOMBRE
-						FROM marca_producto";
+						FROM MARCA_PRODUCTO";
 					}
 				}else{
 					$sql="SELECT MAR_ID,MAR_NOMBRE
-						FROM marca_producto";
+						FROM MARCA_PRODUCTO";
 				}
 
 				$result=mysqli_query($conexion,$sql);

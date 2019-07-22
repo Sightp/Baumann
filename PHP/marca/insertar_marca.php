@@ -7,7 +7,7 @@
 	$a=$_POST['nombre'];
 
 
-	$sql="INSERT into marca_producto (MAR_ID,MAR_NOMBRE)
+	$sql="INSERT into MARCA_PRODUCTO (MAR_ID,MAR_NOMBRE)
 								values ('$n','$a')";
 	echo $result=mysqli_query($conexion,$sql);
 

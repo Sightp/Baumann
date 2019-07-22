@@ -3,7 +3,7 @@
 	$conexion=conexion();
 
 	$sql="SELECT MAR_ID,MAR_NOMBRE 
-						FROM marca_producto";
+						FROM MARCA_PRODUCTO";
 				$result=mysqli_query($conexion,$sql);
 
  ?>
