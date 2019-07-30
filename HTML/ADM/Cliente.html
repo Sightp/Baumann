@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+
+      
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+
+
+  
+
+    <link href="../../Librerias/Boostrap/css/bootstrap.min.css" rel="stylesheet"> 
+    <link href="../../Librerias/select2/css/select2.css" rel="stylesheet"> 
+    <link href="../../Librerias/datatable/bootstrap.min.css" rel="stylesheet">
+    <link href="../../Librerias/datatable/dataTables.bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="../../Librerias/alertifyjs/css/themes/default.css">
+    <link rel="stylesheet" type="text/css" href="../../Librerias/alertifyjs//css/alertify.css">
+
+    <script src="../../Librerias/js/jquery-3.3.1.js"></script>    
+
+    <script src="../../Librerias/datatable/jquery.dataTables.min.js"></script>
+    <script src="../../Librerias/datatable/dataTables.bootstrap.min.js"></script>
+
+    <script src="../../Librerias/Boostrap/js/bootstrap.js"></script>
+    <script src="../../Librerias/select2/js/select2.js"></script>
+    <script src="../../JS/ADM/Cliente/agregar_cliente.js"></script>
+
+    <script src="../../Librerias/alertifyjs/alertify.js"></script>
+
+    <title>Cliente</title>
+
+
+   
+      
+     
+          
+        
+      
+
+
+</head>
+<body>
+
+
+     <div class="container">
+
+    
+        <h2>Clientes Actuales</h2>
+
+        <div class="row">
+
+                <div class="col-md-8">
+                
+                        <div class="form-group" >
+                
+                        <button type="button" class="btn btn-primary glyphicon glyphicon-plus" data-toggle="modal" data-target="#modalregistroproveedor"> AGREGAR </button>
+
+                        </div>
+
+
+                            <!--- FORMULARIO->
+                        
+                        <form id="formulario2">
+
+
+
+                             <div class="form-group">
+                               <input type="text" class="form-control" placeholder="RUT :" id="rut_proveedor">
+                            </div>
+                             <div class="form-group">
+                              <input type="text" class="form-control" placeholder="NOMBRE :" id="nombre_proveedor">
+                             </div>
+                             <div class="form-group">
+                                <input type="text" class="form-control" placeholder="TELEFONO :" id="telefono_proveedor">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="CORREO :" id="correo_telefono">
+                            </div>
+                              
+                                  
+
+                                  <button  class="btn btn-block  btn-danger "  id="boton"  type="submit">GUARDAR</button>
+                                  <br>
+                                </form>
+
+
+                                                            FIN  FORMULARIO-->
+
+
+                                                            
+
+
+                                                                <!-- modal de agregar -->
+                                
+                                    <!-- Modal -->
+                                    <form  method="post" id="formulario1">
+                                    <div class="modal fade" id="modalregistroproveedor" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                            <div class="modal-dialog modal-sm" role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                <h5 class="modal-title" id="exampleModalLabel">AGREGAR CLIENTE</h5>
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                </button>
+                                                </div>
+                                                <div class="modal-body">
+                                                 
+    
+                                                    <div class="form-group">
+                                                        <input type="text"   class="form-control" placeholder="RUT :" id="rut_cliente" name="">
+                                                    </div>
+                                                    <div class="form-group">
+                                                            <input type="text" class="form-control" placeholder="NOMBRE :" id="nombre_cliente">
+    
+                                                    </div>
+                                                    <div class="form-group">
+                                                            <input type="text" class="form-control" placeholder="PATERNO :" id="paterno_cliente">
+    
+                                                    </div>
+                                                    <div class="form-group">
+                                                            <input type="text" class="form-control" placeholder="MATERNO :" id="materno_cliente">
+    
+                                                    </div>
+    
+                                                    <div class="form-group">
+                                                        <input type="text" class="form-control" placeholder="CIUDAD :" id="ciudad_cliente">
+
+                                                    </div>
+
+                                                    <div class="form-group">
+                                                        <input type="text" class="form-control" placeholder="DIRECCIÓN :" id="direccion_cliente">
+
+                                                    </div>
+
+                                                        <div class="form-group">
+                                                            <input type="text" class="form-control" placeholder="TELEFONO :" id="telefono_cliente">
+
+                                                    </div>
+
+                                                        <div class="form-group">
+                                                            <input type="text" class="form-control" placeholder="CORREO :" id="correo_cliente">
+
+                                                    </div>
+
+                                                        <div class="form-group">
+                                                            <input type="text" class="form-control" placeholder="CONTRASEÑA :" id="contraseña_cliente">
+
+                                                    </div>
+
+            
+    
+                                   
+    
+                                                </div>
+                                                <div class="modal-footer">
+                                                        <button type="button" class="btn btn-success" data-dismiss="modal" id="guardarcliente">GUARDAR </button>
+
+                                                
+                                                </div>
+                                            </div>
+                                            </div>
+                                        </div>
+                                    </form>
+
+
+
+
+
+
+
+                    
+                            <div class="form-group">
+
+                                    <table class="table table-striped" >
+                                            <thead> 
+                                              <tr> 
+                                                <th>RUT</th> 
+                                                <th>NOMBRE</th>
+                                                <th>PATERNO</th>
+                                                <th>MATERNO</th>
+                                                <th>CIUDAD</th>
+                                                <th>DIRECCION</th>
+                                                <th>TELEFONO</th>
+                                                <th>CORREO</th>
+                                                <th>CONTRASEÑA</th>                                                 
+                                                <th>EDITAR</th> 
+                                                <th>ELIMINAR</th>
+                                            
+                                              </tr> 
+                                            </thead>
+                                            <tbody id="marcas">
+                              
+                      
+                                            </tbody>
+                                          </table>
+                                            
+                                        </div>
+
+
+
+                            </div>
+
+
+
+
+                        
+
+
+                                    
+                                                                <!-- modal de editar -->
+                                
+                                    <!-- Modal -->
+                                    <div class="modal fade" id="modaleditarproveedor" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                            <div class="modal-dialog modal-sm" role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                <h5 class="modal-title" id="exampleModalLabel">EDITAR DATOS DEL PROVEEDOR</h5>
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                </button>
+                                                </div>
+                                                <div class="modal-body">
+                                                        <div class="form-group">
+                                                                RUT :
+                                                                <input type="text"class="form-control" placeholder="RUT :" id="rut_cliente1" name="">
+                                                            </div>
+                                                            <div class="form-group">
+                                                                NOMBRE :
+                                                                    <input type="text" class="form-control" placeholder="NOMBRE :" id="nombre_cliente1">
+            
+                                                            </div>
+                                                            <div class="form-group">
+                                                                APELLIDO PATERNO :
+                                                                    <input type="text" class="form-control" placeholder="PATERNO :" id="paterno_cliente1">
+            
+                                                            </div>
+                                                            <div class="form-group">
+                                                                APELLIDO MATERNO :
+                                                                    <input type="text" class="form-control" placeholder="MATERNO :" id="materno_cliente1">
+            
+                                                            </div>
+            
+                                                            <div class="form-group">
+                                                                CIUDAD :
+                                                                <input type="text" class="form-control" placeholder="CIUDAD :" id="ciudad_cliente1">
+        
+                                                            </div>
+
+                                                            <div class="form-group">
+                                                                DIRECCIÓN :
+                                                                <input type="text" class="form-control" placeholder="DIRECCIÓN :" id="direccion_cliente1">
+        
+                                                            </div>
+
+                                                                <div class="form-group">
+                                                                    TELÉFONO :
+                                                                    <input type="text" class="form-control" placeholder="TELEFONO :" id="telefono_cliente1">
+
+                                                            </div>
+
+                                                                <div class="form-group">
+                                                                    CORREO :
+                                                                    <input type="text" class="form-control" placeholder="CORREO :" id="correo_cliente1">
+
+                                                            </div>
+
+                                                                <div class="form-group">
+                                                                    CONTRASEÑA :
+                                                                    <input type="text" class="form-control" placeholder="CONTRASEÑA :" id="contraseña_cliente1">
+
+                                                            </div>
+
+                             
+                                                            
+                                                </div>
+                                                <div class="modal-footer">
+                                                <button type="button" class="btn btn-success" data-dismiss="modal" id="editardatosproveedores">GUARDAR CAMBIOS</button>
+                                            
+                                                </div>
+                                            </div>
+                                            </div>
+                                        </div>
+
+
+
+                        
+
+            
+                
+
+                </div>
+
+
+                
+        </div>
+
+     </div>
+
+
+
+              
+           
+</body>
+</html>
