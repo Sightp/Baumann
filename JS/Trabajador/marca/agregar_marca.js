@@ -1,59 +1,7 @@
-// funcion para agregar datos 
 
 
-function agregardatos(codigo,nombre){
-
-	cadena="codigo=" + codigo + 
-			"&nombre=" + nombre;
-
-	$.ajax({
-		type:"POST",
-		url:"../../PHP/Trabajador/marca/insertar_marca.php",
-		data:cadena,
-		success:function(r){
-			console.log(r);
-			if(r==1){
-				$('#tabla').load('../../PHP/Trabajador/marca/tabla.php');
-				 $('#buscador').load('../../PHP/Trabajador/marca/buscador.php');
-				alertify.success("agregado con exito :)");
-			}else{
-                console.log(r);
-                console.log("se mete al else");
-				alertify.error("Fallo el servidor fgfg:(");
-			}
-		}
-	});
-
-}
-
-// funcion para confirmar eliminacion de marca 
-function preguntarSiNo(codigo){
-	alertify.confirm('Eliminar Marca', '¿Esta seguro de eliminar esta Marca?', 
-					function(){ eliminarDatos(codigo) }
-                , function(){ alertify.error('Se cancelo')});
-}
 
 
-// funcion para eliminar datos
-
-function eliminarDatos(codigo){
-
-	cadena="codigo=" + codigo;
-
-		$.ajax({
-			type:"POST",
-			url:"../../PHP/Trabajador/marca/eliminar_marca.php",
-			data:cadena,
-			success:function(r){
-				if(r==1){
-					$('#tabla').load('../../PHP/Trabajador/marca/tabla.php');
-					alertify.success("Marca eliminada con exito!");
-				}else{
-					alertify.error("Error al eliminar la Marca seleccionada");
-				}
-			}
-		});
-}
 
 
 // funcion para llenar el formulario al editar 
