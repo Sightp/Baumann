@@ -3,7 +3,7 @@ function agregaform(datos){
     d=datos.split('||');
     $('#codigou').val(d[0]);
     $('#nombreu').val(d[1]);
-    $("#estadou").val(d[2]);;
+    $("#estadou").val(d[2]);
 }
 
 //ACTUALIZAR DATOS DE REGION//
