@@ -9,23 +9,18 @@
 	<div class="col-sm-12">
 	<h2>Administrador de Marca de un Producto</h2>
 		<table class="table table-hover table-condensed table-bordered" id="tabladinamicamarca">
-		<caption>
-			<button class="btn btn-primary" data-toggle="modal" data-target="#modalNuevo">
-				Agregar nuevo 
-				<span class="glyphicon glyphicon-plus"></span>
-			</button>
-		</caption>
+		<button class="btn btn-primary" data-toggle="modal" data-target="#modalNuevo" style="margin-bottom:5px;">
+			<i class="fas fa-plus" style="margin-right:5px;" ></i>Agregar
+		</button>
 
-		<thead>
-
+		<thead class="thead-dark" >
 			<tr>
-				<td>CODIGO</td>
-				<td>NOMBRE</td>
-				<td>Editar</td>
-				<td>Eliminar</td>
+				<th scope="col">#</th>
+				<th scope="col">Nombre Marca </th>
+				<th scope="col">Editar</th>
+				<th scope="col">Eliminar</th>
 			</tr>
-
-		</thead>
+  		</thead>
 		<tbody>
 
 			<?php 
@@ -54,13 +49,13 @@
 				<td><?php echo $ver[0] ?></td>
 				<td><?php echo $ver[1] ?></td>
 				<td>
-					<button class="btn btn-warning glyphicon glyphicon-pencil" data-toggle="modal" data-target="#modalEdicion" onclick="agregaform('<?php echo $datos ?>')">
+					<button class="btn btn-warning glyphicon" data-toggle="modal" data-target="#modalEdicion"  style="margin-right:5px;" onclick="agregaform('<?php echo $datos ?>')"><i class="fas fa-pen"style="color:#fff;"></i>
 						
 					</button>
 				</td>
 				<td>
-					<button class="btn btn-danger glyphicon glyphicon-remove" 
-					onclick="preguntarSiNo('<?php echo $ver[0] ?>')">
+					<button class="btn btn-danger" 
+					onclick="preguntarSiNo('<?php echo $ver[0] ?>')"><i class="fas fa-times"></i>
 						
 					</button>
 				</td>
