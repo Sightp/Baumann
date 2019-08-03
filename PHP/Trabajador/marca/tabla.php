@@ -8,9 +8,7 @@
 <div class="row">
 	<div class="col-sm-12">
 		<table class="table table-hover table-condensed table-bordered" id="tabladinamicamarca">
-		<button class="btn btn-primary" data-toggle="modal" data-target="#modalNuevo" style="margin-bottom:5px;">
-			<i class="fas fa-plus" style="margin-right:5px;" ></i>Agregar
-		</button>
+	
 
 
 		<thead class="thead-dark" >
@@ -18,27 +16,16 @@
 				<th scope="col">#</th>
 				<th scope="col">Nombre Marca </th>
 				<th scope="col">Editar</th>
-				<th scope="col">Eliminar</th>
 			</tr>
   		</thead>
 		<tbody>
 
 			<?php 
 
-				if(isset($_SESSION['consulta'])){
-					if($_SESSION['consulta'] > 0){
-						$idp=$_SESSION['consulta'];
-						$sql="SELECT MAR_ID,MAR_NOMBRE 
-						FROM MARCA_PRODUCTO where MAR_ID='$idp'";
-					}else{
-						$sql="SELECT MAR_ID,MAR_NOMBRE
-						FROM MARCA_PRODUCTO";
-					}
-				}else{
-					$sql="SELECT MAR_ID,MAR_NOMBRE
-						FROM MARCA_PRODUCTO";
-				}
+		
 
+				$sql="SELECT MAR_ID,MAR_NOMBRE
+						FROM MARCA_PRODUCTO";
 				$result=mysqli_query($conexion,$sql);
 				while($ver=mysqli_fetch_row($result)){ 
 
@@ -51,10 +38,7 @@
 				<td>
 				<button class="btn btn-warning " data-toggle="modal" data-target="#modalEdicion" style="margin-right:5px;"onclick="agregaform('<?php echo $datos  ?>')"><i class="fas fa-pen"style="color:#fff;"></i></button>
 				</td>
-				<td>
-				<button class="btn btn-danger " onclick="preguntarSiNo('<?php echo $ver[0]?>')"><i class="fas fa-times"></i></button>
-
-				</td>
+			
 			</tr>
 			<?php 
 		}
