@@ -6,17 +6,16 @@
 ?>
 
 <table class="table table-hover table-condensed table-bordered" id="tablaDinamicaLoad">
-    <caption>
-        <button class="btn btn-primary" data-toggle="modal" data-target="#modalAgregar">Agregar
-            <span class="glyphicon glyphicon-plus"><span>
-        </button>
-    </caption> 
-  <thead>
+<button class="btn btn-primary" data-toggle="modal" data-target="#modalAgregar" style="margin-bottom:5px;">
+    <i class="fas fa-plus" style="margin-right:5px;" ></i>Agregar
+</button>
+   
+  <thead class="thead-dark">
     <tr>  
-        <td>Código Estado Orden</td>
-        <td>Descripción</td>
-        <td>Editar</td>
-        <td>Eliminar</td>
+        <th scope="col">Código Estado Orden</th>
+        <th scope="col">Descripción</th>
+        <th scope="col">Editar</th>
+        <th scope="col">Eliminar</th>
     </tr>
   </thead>
   <tbody>
@@ -40,11 +39,10 @@
             <td><?php echo $ver[0]?></td>
             <td><?php echo $ver[1]?></td>
             <td>
-            <button class="btn btn-warning glyphicon glyphicon-pencil" data-toggle="modal" data-target="#modalEditar" onclick="agregaform('<?php echo $datos  ?>')">
-            </button>
+                <button class="btn btn-warning " data-toggle="modal" data-target="#modalEditar" style="margin-right:5px;"onclick="agregaform('<?php echo $datos  ?>')"><i class="fas fa-pen"style="color:#fff;"></i></button>
             </td>
             <td>
-                <button class="btn btn-danger glyphicon glyphicon-remove" onclick="preguntarSiNo('<?php echo $ver[0]?>')"></button>
+            <button class="btn btn-danger " onclick="preguntarSiNo('<?php echo $ver[0]?>')"><i class="fas fa-times"></i></button>
             </td>
         </tr>
     
