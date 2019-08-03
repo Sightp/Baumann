@@ -175,7 +175,7 @@
                     <img src="../../Archivos/images/marcas.jpeg" class="rounded-circle" id="flex-img" alt="">
                 </div>
                 <div class="text-seccion2" style="flex-grow:8;">
-                    <span>Módulo de administración de Marcas, acá podrás insertar, editar y eliminar Marcas registradas dentro del sistema.</span>
+                    <span>Módulo de administración de Marcas, acá podrás  editar  Marcas registradas dentro del sistema.</span>
                 </div>
             </div>
             <hr style="margin-bottom:70px;margin-top:70px;background-color:#ccc">
@@ -192,29 +192,6 @@
 <div class="clearfix" style="background-color:#f1f2f7"></div>
 
 
-<div class="modal fade" id="modalNuevo" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header btn-primary disabled">
-              <h3 class="modal-title" align="center" id="exampleModalLabel">Agregar nueva Marca</h3>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="modal-body">
-                <!--DATOS QUE SEÁN AGREGADOS-->
-                ID:
-                <input type="text" class="form-control" id="codigo_marca" placeholder="Código">
-                Nombre :
-                <input type="text" id="nombre_marca"class="form-control" placeholder="Nombre Marca:">
-                
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-primary" data-dismiss="modal" id="agregarnuevo">Agregar</button>
-            </div>
-          </div>
-        </div>
-      </div>
 
   <!-- MODAL PARA EDITAR DATOS-->
   <div class="modal fade" id="modalEdicion" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -267,11 +244,7 @@
                 <!--AGREGAR Marca-->
                 <script language="JavaScript" type="text/JavaScript">
                     $(document).ready(function(){
-                            $("#agregarnuevo").click(function(){
-                            codigo=$('#codigo_marca').val();
-                            nombre=$('#nombre_marca').val();
-                            agregardatos(codigo,nombre);
-                            });
+                      
                             $("#actualizardatos").click(function(){
                                 actualizaDatos();
                             });  
