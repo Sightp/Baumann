@@ -27,7 +27,7 @@ function agregaform(datos){
     d=datos.split('||');
     $('#codigou').val(d[0]);
     $('#nombreu').val(d[1]);
-    $("#paisu option[value='"+d[2]+"']").attr("selected", true);
+     $('#paisu').val(d[2]);
 }
 
 //ACTUALIZAR DATOS DE REGION//
