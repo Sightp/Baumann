@@ -24,6 +24,9 @@
     
     
     <script src="../../JS/ADM/marca/agregar_marca.js"></script>
+    <script src="../../JS/ADM/marca/validaciones.js"></script>
+
+
 
 
     
@@ -219,6 +222,8 @@
 
 
 <!-- MODAL PARA AGREGAR DATOS-->
+<form id="formulario1">
+
 <div class="modal fade" id="modalNuevo" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
           <div class="modal-content">
@@ -232,8 +237,14 @@
                 <!--DATOS QUE SEÁN AGREGADOS-->
                 ID:
                 <input type="text" class="form-control" id="codigo_marca" placeholder="Código">
+                <small id="ID_MARCA_VACIO" style="color:red">* El id marca es requerido</small></br>
+                <small id="ID_MARCA_MAX" style="color:red">* El id marca debe tener menos de 15 caracteres</small>
+            </br>
                 Nombre :
                 <input type="text" id="nombre_marca"class="form-control" placeholder="Nombre Marca:">
+                <small id="NOMBRE_MARCA_VACIO" style="color:red">* El nombre  es requerido</small></br>
+                <small id="NOMBRE_MARCA_MAX" style="color:red">* El nombre debe tener  menos de 10 caracteres</small>
+                
                 
             </div>
             <div class="modal-footer">
@@ -242,6 +253,7 @@
           </div>
         </div>
       </div>
+    </form>
 
   <!-- MODAL PARA EDITAR DATOS-->
   <div class="modal fade" id="modalEdicion" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -259,9 +271,14 @@
             <!--DATOS DE ORDEN QUE SERÁN EDITADOS-->
             Codigo Marca:
             <input type="text" class="form-control"  id="codigou" placeholder="Código" disabled>
+            <small id="ID_MARCA_VACIO_EDITAR" style="color:red">* El id marca es requerido</small></br>
+            <small id="ID_MARCA_MAX_EDITAR" style="color:red">* El id marca debe tener menos de 15 caracteres</small>
+        </br>
             Nombre Marca:
             <input type="text" class="form-control"  id="nombreu" placeholder="Nombre Marca:">
-           
+            <small id="NOMBRE_MARCA_VACIO_EDITAR" style="color:red">* El nombre  es requerido</small></br>
+            <small id="NOMBRE_MARCA_MAX_EDITAR" style="color:red">* El nombre debe tener  menos de 10 caracteres</small>
+
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-warning" data-dismiss="modal" id="actualizardatos">Editar</button>
