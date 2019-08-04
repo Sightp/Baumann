@@ -9,7 +9,7 @@
 
     $result=mysqli_query($conexion,$sql);
    
-    echo '<option style="font-size:14px;"selected value="0">--Seleccione--</option>'; 
+    echo '<option style="font-size:14px;"selected value="0" disabled>--Seleccione--</option>'; 
     while ($fila = mysqli_fetch_array($result)) {
         echo '<option style="font-size:14px;"value="'.$fila['PA_ID'].'">'.$fila['PA_NOMBRE'].'</option>';
     };
