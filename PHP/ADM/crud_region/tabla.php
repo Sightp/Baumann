@@ -29,18 +29,18 @@
         if(isset($_SESSION['consulta'])){
             if($_SESSION['consulta'] > 0){
                 $codigoR=$_SESSION['consulta'];
-                $sql = "SELECT REGION.REG_ID, REGION.REG_NOMBRE, PAIS.PA_NOMBRE
+                $sql = "SELECT REGION.REG_ID, REGION.REG_NOMBRE, PAIS.PA_NOMBRE, PAIS.PA_ID 
                 FROM REGION
                 JOIN PAIS ON REGION.PA_ID=PAIS.PA_ID
                 WHERE REGION.REG_ID=$codigoR";
             }else{
-                $sql = "SELECT REGION.REG_ID, REGION.REG_NOMBRE, PAIS.PA_NOMBRE
+                $sql = "SELECT REGION.REG_ID, REGION.REG_NOMBRE, PAIS.PA_NOMBRE, PAIS.PA_ID
                 FROM REGION
                 JOIN PAIS ON REGION.PA_ID=PAIS.PA_ID";
             }
 
         }else{
-            $sql = "SELECT REGION.REG_ID, REGION.REG_NOMBRE, PAIS.PA_NOMBRE
+            $sql = "SELECT REGION.REG_ID, REGION.REG_NOMBRE, PAIS.PA_NOMBRE, PAIS.PA_ID
             FROM REGION
             JOIN PAIS ON REGION.PA_ID=PAIS.PA_ID";
         }
@@ -51,7 +51,7 @@
         //INICIO DEL WHILE PARA MOSTRAR DATOS TABLA//
         while ($ver=mysqli_fetch_row($result)) {  
             
-            $datos=$ver[0]."||".$ver[1]."||".$ver[2];
+            $datos=$ver[0]."||".$ver[1]."||".$ver[3];
     ?>
 
     <tr class="tabla-contenido">  
