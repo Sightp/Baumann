@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="../../CSS/style.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity ="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <script src="../../Librerias/js/jquery-3.2.1.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="../Usuario/css/style.css">
 
 
     <script src="../../JS/ADM/agregar_ciudad.js"></script>
@@ -228,8 +229,13 @@
             <!--DATOS DE ORDEN QUE SERÁN EDITADOS-->
             Codigo estado orden:
             <input type="text" class="form-control"  id="codigo" placeholder="Código" >
+            <div class="error codigovacio">Codigo no puede estar vacío</div>
+            <br>
+            
+
             Descripcion estado orden:
-            <input type="text" class="form-control"  id="nombre" placeholder="Descripcion Orden:" >
+            <input type="text" class="form-control"  id="nombre" placeholder="Descripcion Orden:">
+            <div class="error nomvacioA">Descripcion no puede estar vacío</div>
         </div>
         <div class="modal-footer">
         <button type="button" class="btn btn-primary" data-dismiss="modal" id="agregarnuevo">Agregar</button>
@@ -254,8 +260,9 @@
             <!--DATOS DE ORDEN QUE SERÁN EDITADOS-->
             Codigo Orden:
             <input type="text" class="form-control"  id="codigou" placeholder="Código" disabled>
-            Nombre Producto:
-            <input type="text" class="form-control"  id="nombreu" placeholder="Nombre Producto:">
+            Descripcion Estado Orden:
+            <input type="text" class="form-control"  id="nombreu" placeholder="Descripcion Orden:">
+            <div class="error nomvacio">El campo Descripcion no puede estar vacío</div>
         
         </div>
         <div class="modal-footer">
