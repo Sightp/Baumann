@@ -27,7 +27,7 @@ function agregaform(datos){
     d=datos.split('||');
     $('#codigou').val(d[0]);
     $('#nombreu').val(d[1]);
-     $('#paisu').val(d[2]);
+    $('#paisu').val(d[2]);
 }
 
 //ACTUALIZAR DATOS DE REGION//
@@ -84,3 +84,112 @@ function eliminarDatos(codigo){
 }
 
 
+$(document).ready(function() {
+
+    CondicionnomE=0;
+    
+    CondicionnomA=0;
+    CondicionCodigo=0;
+ 
+    
+  
+    jQuery(function() {
+      $('.nomvacioA').hide();
+      $('.nomvacioE').hide();
+      $('.codigovacio').hide();
+    });
+
+    //NOMBRE VACIO AGREGAR//
+    $("#nombre").blur(function() {
+    var total;
+    total=$("#nombre").val().length;
+    if (total==0){
+        $('.nomvacioA').show();
+        CondicionnomE=0;
+        return true;
+    }
+    else {
+        $('.nomvacioA').hide();
+        CondicionnomE=1;
+        return false;
+    } 	
+});
+
+
+
+
+//NOMBRE VACIO EDITAR//
+$("#nombreu").blur(function() {
+    var total;
+    total=$("#nombreu").val().length;
+    if (total==0){
+        $('.nomvacioE').show();
+        CondicionnomA=0;
+        return true;
+    }
+    else {
+        $('.nomvacioE').hide();
+        CondicionnomA=1;
+        return false;
+    } 	
+});
+
+
+//Codigo VACIO AGREGAR//
+$("#codigo").blur(function() {
+    var total;
+    total=$("#codigo").val().length;
+    if (total==0){
+        $('.codigovacio').show();
+        CondicionCodigo=0;
+        return true;
+    }
+    else {
+        $('.codigovacio').hide();
+        CondicionCodigo=1;
+        return false;
+    } 	
+});
+
+
+
+
+//NUMEROS SOLO ACEPTE//
+$("#codigo").keydown(function(event) {
+    if(event.shiftKey)
+    {
+      event.preventDefault();
+    }
+  
+    if ((event.keyCode >47  && event.keyCode < 58 || event.keyCode==8 )){      
+    }else{
+        alertify.error('Este campo solo acepta números');
+        event.preventDefault();
+    }
+    });
+  
+
+
+
+$(document).click(function() {
+    paisv=document.getElementById("pais").value;
+	if(CondicionnomA==1){
+	    $("#actualizardatos").prop('disabled', false);
+	}else{
+	    $("#actualizardatos").prop('disabled', true);
+    }
+
+    
+    if(CondicionnomE==1 && CondicionCodigo==1 && paisv>0){
+	    $("#agregarnuevo").prop('disabled', false);
+	}else{
+	    $("#agregarnuevo").prop('disabled', true);
+    }
+
+
+    });
+
+
+
+
+});
