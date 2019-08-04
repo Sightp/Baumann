@@ -1,0 +1,73 @@
+*{
+    
+}
+a{
+    text-decoration: none;
+    color:black;
+    transition: 300ms;
+}
+a:hover{
+    text-decoration: none;
+    color:green;
+}
+.loginbutton{
+    color:white;
+    border-radius: 15px;
+}
+body{
+    background: whitesmoke;
+}
+.pdes{
+    background: linear-gradient(to right,rgb(167,66,66), #ff6347);
+    color:white;
+    font-family: 'Oswald', sans-serif;
+    transition: 500ms;
+}
+.pdes:hover{
+    transform: translateY(-10px);
+}
+.separaseccion{
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+hr{
+    border:2px solid black;
+}
+.hrfooter{
+    border:0.5px solid whitesmoke;
+}
+footer{
+    font-family: 'Montserrat', sans-serif;
+    background: linear-gradient(to right,rgb(167,66,66), #ff6347);
+    font-size: 14px;
+}
+.indexgrid{
+    font-family: 'Oswald', sans-serif;
+    width: 90%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-template-rows: 300px 300px;
+    grid-column-gap: 50px;
+    grid-row-gap: 50px;
+}
+.index-item{
+}
+.indexnav{
+    font-family: 'Montserrat', sans-serif;
+    border-bottom: 3px solid rgb(167,66,66);
+    background:linear-gradient(to right,rgb(167,66,66), #ff6347);
+}
+.indexwelcome{
+    font-family: 'Montserrat', sans-serif;
+    
+}
+.indexcara{
+    font-family: 'Montserrat', sans-serif;
+}
+.card{
+    transition: 1s;
+}
+.card:hover{
+    transform: scale(1.1);
+}
