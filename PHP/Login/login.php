@@ -34,8 +34,8 @@
 			<div class="login-formulario-box">
 				<h2>Optica <p>X</p></h2>
 				<div class="login-nombre">
-					<label for="nombre">Nombre de usuario</label>
-					<input type="text" id="nombre" placeholder="Inserte su nombre de usuario" name="usuario" value="<?php echo $nombreUsuario?>">
+					<label for="nombre">Correo Electronico</label>
+					<input type="text" id="nombre" placeholder="Inserte su correo" name="usuario" value="<?php echo $nombreUsuario?>">
 				</div>
 				<div class="login-password">
 					<label for="password">Contraseña</label>
