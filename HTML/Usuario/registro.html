@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link href="../../Librerias/Boostrap/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="../../Librerias/alertifyjs/css/themes/default.css">
     <script src="../../Librerias/js/jquery-3.2.1.min.js"></script>
     <script src="../../JS/Usuario/validaciones.js"></script> 
@@ -12,13 +11,32 @@
     <link rel="stylesheet" type="text/css" href="../../Librerias/alertifyjs//css/alertify.css">
     <script src="../../Librerias/alertifyjs/alertify.js"></script>
     <link rel="stylesheet" type="text/css" href="css/style.css">
-
-    
-   
-
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/d3c1b7ea74.js"></script>
+    <style>
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300|Oswald&display=swap');
+</style>
+    <link rel="stylesheet" href="../../CSS/index.css">
     <title>Registro Cliente</title>
 </head>
 <body>
+        <nav class="navbar navbar-expand-lg indexnav sticky-top"  >
+                <a class="navbar-brand" href="#"> OpticaX</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
+                  <div class="navbar-nav justify-content-end">
+                    <a style="color:white;"class="nav-item nav-link active" href="../../index.php">Inicio <span class="sr-only">(current)</span></a>
+                    <a style="color:white"class="nav-item nav-link " href="../../productos.php">Productos</a>
+                    <a style="color:white;"class="nav-item nav-link " href="../../HTML/Usuario/Registro.html">Registro</a>
+                    <a style="color:white;"class="nav-item nav-link loginbutton " href="../../PHP/Login/login.php">Iniciar Sesion</a>
+                  </div>
+                </div>
+              </nav>
 
     <div class="container">
     
@@ -146,6 +164,29 @@
             <div class="error">(*)Campos obligatorios</div>
         </div>
     </div>
+    <footer class="row mt-5 mx-auto " style="height: 200px;width: 100%;">
+            <div class="col"></div>
+            <div class="col mt-3">
+              <p class="text-center"></p> 
+              <p class="lead text-light text-center">OpticaX</p>
+            </div>
+              <div class="col mt-3"style="">
+                
+              </div>
+              <div class="col mt-3">
+              <h3 class="lead mt-2 text-light font-weight-bold ">Contacto</h3>
+              <hr class="hrfooter">
+                <p class=" font-weight-light text-light"><i class="fas fa-phone text-light fa-lg"></i> Telefono</p>
+                <p class=" font-weight-light text-light"><i class="fas fa-map-marker-alt text-light fa-lg"></i> Ubicacion</p>
+                 
+              </div>
+              <div class="col mt-3">
+              <h3 class="lead mt-2 text-light font-weight-bold">Redes Sociales</h3>
+              <hr class="hrfooter">
+                <p class="font-weight-light text-light"><i class="fab fa-facebook text-light fa-lg "> </i> Facebook</p> 
+                 <p class="font-weight-light text-light"><i class="fab fa-instagram text-light fa-lg "> </i> Instagram</p>
+              </div>
+        </footer>
 
     <!-- ENVIAR DATOS PARA INSERTAR EN LA BD-->
     <script type="text/javascript">
