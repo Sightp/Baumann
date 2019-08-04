@@ -257,6 +257,20 @@ $("#idtelefono").keydown(function(event) {
   });
 
 
+  //VALIDAR QUE RUT SOLO ACEPTE VALORES NUMERIOS Y  
+$("#idrut").keydown(function(event) {
+  if(event.shiftKey)
+  {
+    event.preventDefault();
+  }
+
+  if ((event.keyCode >47  && event.keyCode < 58 || event.keyCode==8 || event.keyCode==75)){      
+  }else{
+      alertify.error('Este campo solo acepta números');
+      event.preventDefault();
+  }
+  });
+
 //VALIDACION DE CAMPOS VACIOS//
 
 
