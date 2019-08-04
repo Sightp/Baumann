@@ -4,7 +4,7 @@
       $servidor="localhost";
       $usuario="root";
       $pass="";
-      $bd="optica";
+      $bd="grupo4bd";
 
       $conexion=mysqli_connect($servidor,$usuario,$pass,$bd);
 
