@@ -5,37 +5,27 @@
 	$conexion=conexion();
 
  ?>
-<div class="row">
-	<div class="col-sm-12">
-	<h2>Administrador de Cliente</h2>
+
 		<table class="table table-hover table-condensed table-bordered" id="tabladinamicamarca">
-		<caption>
-			<button class="btn btn-primary" data-toggle="modal" data-target="#modalregistroproveedor">
-				Agregar nuevo 
-				<span class="glyphicon glyphicon-plus"></span>
-			</button>
-		</caption>
-
-		<thead>
+		<button class="btn btn-primary" data-toggle="modal" data-target="#modalregistroproveedor">
+			<i class="fas fa-plus" style="margin-right:5px;" ></i> Agregar  
+		</button>
 
 
-			<tr>
-                <td>RUT</td>
-                <td>NOMBRE</td>
-				<td>PATERNO</td>
-				<td>MATERNO</td>
-                <td>CIUDAD</td>
-                <td>SUCURSAL</td>
-                <td>ROL</td>
-                <td>DIRECCION</td>
-				<td>TELEFONO</td>
-				<td>CORREO</td>
-				<td>CONTRASEÑA</td>
-				<td>EDITAR</td>
-				<td>Eliminar</td>
-			</tr>
+		<thead class="thead-dark" >
+				<tr style="font-size:13px;">
+					<th scope="col">RUT</th>
+					<th scope="col">Nombre </th>
+					<th scope="col">Apellido</th>
+					<th scope="col">Ciudad</th>
+					<th scope="col">Sucursal </th>
+					<th scope="col">Rol</th>
+					<th scope="col">Telefono</th>
+					<th scope="col">Editar</th>
+					<th scope="col">Eliminar</th>
+				</tr>
+ 		 </thead>
 
-		</thead>
 		<tbody>
 
             <?php 
@@ -47,7 +37,7 @@
                 
               */ 
 		
-                $sql="SELECT EMP_RUT,EMP_NOMBRE ,EMP_PATERNO,EMP_MATERNO,CIUDAD.CIU_NOMBRE ,SUCURSAL.SUC_NOMBRE ,ROL.ROL_TIPO ,EMP_DIRECCION ,EMP_TELEFONO ,EMP_CORREO,EMP_PASS 
+                $sql="SELECT EMP_RUT,EMP_NOMBRE ,EMP_PATERNO,EMP_MATERNO,CIUDAD.CIU_NOMBRE ,SUCURSAL.SUC_NOMBRE ,ROL.ROL_TIPO ,EMP_DIRECCION ,EMP_TELEFONO ,EMP_CORREO,EMP_PASS,EMPLEADO.CIU_ID 
                 FROM EMPLEADO 
                 JOIN CIUDAD ON CIUDAD.CIU_ID=EMPLEADO.CIU_ID
                 JOIN SUCURSAL ON SUCURSAL.SUC_ID =EMPLEADO.SUC_ID
@@ -58,33 +48,23 @@
 				while($ver=mysqli_fetch_row($result)){ 
 
                     //$datos=$ver[0]."||".$ver[1];
-                    $datos=$ver[0]."||".$ver[1]."||".$ver[2]."||".$ver[3]."||".$ver[4]."||".$ver[5]."||".$ver[6]."||".$ver[7]."||".$ver[8]."||".$ver[9]."||".$ver[10];
+                    $datos=$ver[0]."||".$ver[1]."||".$ver[2]."||".$ver[3]."||".$ver[4]."||".$ver[5]."||".$ver[6]."||".$ver[7]."||".$ver[8]."||".$ver[9]."||".$ver[10]."||".$ver[11];
 
 			 ?>
-
-			<tr>
-				<td><?php echo $ver[0] ?></td>
-                <td><?php echo $ver[1] ?></td>
-                <td><?php echo $ver[2] ?></td>
-                <td><?php echo $ver[3] ?></td>
-                <td><?php echo $ver[4] ?></td>
-                <td><?php echo $ver[5] ?></td>
-                <td><?php echo $ver[6] ?></td>
-                <td><?php echo $ver[7] ?></td>
-                <td><?php echo $ver[8] ?></td>
-                <td><?php echo $ver[9] ?></td>
-                <td><?php echo $ver[10] ?></td>
+			<tr style="font-size:13px; text-transform:uppercase;">
+				<td><?php echo $ver[0] ?></td> <!-- RUT -->
+                <td><?php echo $ver[1] ?></td><!-- NOMBRE -->
+                <td><?php echo $ver[2] ?></td><!-- RUT -->
+                <td><?php echo $ver[4] ?></td><!-- RUT -->
+                <td><?php echo $ver[5] ?></td><!-- RUT -->
+                <td><?php echo $ver[6] ?></td><!-- RUT -->
+                <td><?php echo $ver[8] ?></td><!-- RUT -->
 
 				<td>
-					<button class="btn btn-warning glyphicon glyphicon-pencil" data-toggle="modal" data-target="#modaleditarproveedor" onclick="agregaform('<?php echo $datos ?>')">
-						
-					</button>
-				</td>
+					<button class="btn btn-warning " data-toggle="modal" data-target="#modaleditarproveedor" onclick="agregaform('<?php echo $datos ?>')"> <i class="fas fa-pen"style="color:#fff;"></i></button>	
+			    </td>
 				<td>
-					<button class="btn btn-danger glyphicon glyphicon-remove" 
-					onclick="preguntarSiNo('<?php echo $ver[0] ?>')">
-						
-					</button>
+				<button class="btn btn-danger glyphicon glyphicon-remove" onclick="preguntarSiNo('<?php echo $ver[0] ?>')"><i class="fas fa-times"></i> </button>
 				</td>
 			</tr>
 			<?php 
@@ -93,8 +73,7 @@
 			 		</tbody>
 
 		</table>
-	</div>
-</div>
+
 
 <script type="text/javascript">
 $(document).ready(function(){
