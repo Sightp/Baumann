@@ -13,9 +13,16 @@ function agregardatos(codigo,nombre){
 		success:function(r){
 			console.log(r);
 			if(r==1){
+				$("#agregarnuevo").prop('disabled', true);
+
 				$('#tabla').load('../../PHP/ADM/marca/tabla.php');
 				 $('#buscador').load('../../PHP/ADM/marca/buscador.php');
-				alertify.success("agregado con exito :)");
+				alertify.success("Marca agregada con exito");
+				$('#formulario1').trigger('reset');
+			
+
+
+
 			}else{
                 console.log(r);
                 console.log("se mete al else");
