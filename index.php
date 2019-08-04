@@ -31,7 +31,7 @@
       <div class="navbar-nav justify-content-end">
         <a style="color:white;"class="nav-item nav-link active" href="index.php">Inicio <span class="sr-only">(current)</span></a>
         <a style="color:white"class="nav-item nav-link " href="productos.php">Productos</a>
-        <a style="color:white;"class="nav-item nav-link " href="#">Nosotros</a>
+        <a style="color:white;"class="nav-item nav-link " href="HTML/Usuario/Registro.html">Registro</a>
         <a style="color:white;"class="nav-item nav-link loginbutton " href="PHP/Login/login.php">Iniciar Sesion</a>
       </div>
     </div>
@@ -64,10 +64,14 @@
         </a>
       </div>
 
-      <div class="mx-auto indexwelcome" style="width:60%; heigth=400px;">
-        <h4 class="separaseccion  text-center" >"Bienvenido a
+      <div class="mx-auto indexwelcome row separaseccion shadow" style="width:80%; heigth=400px;">
+        <div class="col"style="padding:0px 0px;">
+          <img src="Archivos/images/indexporta.jpg" alt="" width="100%" heigth="300px"   style="padding:0px 0px;">
+        </div>
+        <div class="col"><h4 class="separaseccion  text-center" >"Bienvenido a
           OpticaX nuestro principal objetivo es que encuentres los lentes  ideales para ti y tu familia"
-        </h4>
+        </h4></div>
+        
       </div>
 
     <div class="separaseccion row container mx-auto">
@@ -79,65 +83,65 @@
         <hr>
       </div>
     </div>
+    
+   
 
 
 
 
       <div class="indexgrid">
-        <div class="index-item">
-        <?php if($row = mysqli_fetch_assoc($result))?>
+        <div class="index-item"> <?php if($row = mysqli_fetch_assoc($result))?>
       <div class="card" style="height:300px;">
   <img src="Archivos/images/imagenlentes/<?php echo $row["PRO_IMAGEN"]; ?>" class="card-img-top" alt="..." widht="100%" height="200px">
   <div class="card-body">
     <span><?php echo $row["PRO_NOMBRE"]."<br>";?></span>
     <span class="text-primary"><?php echo "$".$row["PRO_PRECIO"];?></span>
-    <a href="#" class="btn text-light" style="float:right;background:rgb(167,66,66);"> <i class="fas fa-shopping-cart"></i> AGREGAR AL CARRO</a>
-  </div>
-</div>
-        </div>
-        <div class="index-item"><?php if($row = mysqli_fetch_assoc($result))?>
-      <div class="card" style="height:300px;">
-  <img src="Archivos/images/imagenlentes/<?php echo $row["PRO_IMAGEN"]; ?>" class="card-img-top" alt="..." widht="100%" height="200px">
-  <div class="card-body">
-    <span><?php echo $row["PRO_NOMBRE"]."<br>";?></span>
-    <span class="text-primary"><?php echo "$".$row["PRO_PRECIO"];?></span>
-    <a href="#" class="btn text-light" style="float:right;background:rgb(167,66,66);"> <i class="fas fa-shopping-cart"></i> AGREGAR AL CARRO</a>
+    <a href="descripcion.php?PRO_ID=<?php echo $row["PRO_ID"]; ?>" class="btn text-light" style="float:right;background:rgb(167,66,66);">  Descripcion</a>
   </div>
 </div></div>
-        <div class="index-item"><?php if($row = mysqli_fetch_assoc($result))?>
+        <div class="index-item"> <?php if($row = mysqli_fetch_assoc($result))?>
       <div class="card" style="height:300px;">
   <img src="Archivos/images/imagenlentes/<?php echo $row["PRO_IMAGEN"]; ?>" class="card-img-top" alt="..." widht="100%" height="200px">
   <div class="card-body">
     <span><?php echo $row["PRO_NOMBRE"]."<br>";?></span>
     <span class="text-primary"><?php echo "$".$row["PRO_PRECIO"];?></span>
-    <a href="#" class="btn text-light" style="float:right;background:rgb(167,66,66);"> <i class="fas fa-shopping-cart"></i> AGREGAR AL CARRO</a>
+    <a href="descripcion.php?PRO_ID=<?php echo $row["PRO_ID"]; ?>" class="btn text-light" style="float:right;background:rgb(167,66,66);">  Descripcion</a>
   </div>
 </div></div>
-        <div class="index-item"><?php if($row = mysqli_fetch_assoc($result))?>
+        <div class="index-item"> <?php if($row = mysqli_fetch_assoc($result))?>
       <div class="card" style="height:300px;">
   <img src="Archivos/images/imagenlentes/<?php echo $row["PRO_IMAGEN"]; ?>" class="card-img-top" alt="..." widht="100%" height="200px">
   <div class="card-body">
     <span><?php echo $row["PRO_NOMBRE"]."<br>";?></span>
     <span class="text-primary"><?php echo "$".$row["PRO_PRECIO"];?></span>
-    <a href="#" class="btn text-light" style="float:right;background:rgb(167,66,66);"> <i class="fas fa-shopping-cart"></i> AGREGAR AL CARRO</a>
+    <a href="descripcion.php?PRO_ID=<?php echo $row["PRO_ID"]; ?>" class="btn text-light" style="float:right;background:rgb(167,66,66);">  Descripcion</a>
   </div>
 </div></div>
-        <div class="index-item"><?php if($row = mysqli_fetch_assoc($result))?>
+        <div class="index-item"> <?php if($row = mysqli_fetch_assoc($result))?>
       <div class="card" style="height:300px;">
   <img src="Archivos/images/imagenlentes/<?php echo $row["PRO_IMAGEN"]; ?>" class="card-img-top" alt="..." widht="100%" height="200px">
   <div class="card-body">
     <span><?php echo $row["PRO_NOMBRE"]."<br>";?></span>
     <span class="text-primary"><?php echo "$".$row["PRO_PRECIO"];?></span>
-    <a href="#" class="btn text-light" style="float:right;background:rgb(167,66,66);"> <i class="fas fa-shopping-cart"></i> AGREGAR AL CARRO</a>
+    <a href="descripcion.php?PRO_ID=<?php echo $row["PRO_ID"]; ?>" class="btn text-light" style="float:right;background:rgb(167,66,66);">  Descripcion</a>
   </div>
 </div></div>
-        <div class="index-item"><?php if($row = mysqli_fetch_assoc($result))?>
+        <div class="index-item"> <?php if($row = mysqli_fetch_assoc($result))?>
       <div class="card" style="height:300px;">
   <img src="Archivos/images/imagenlentes/<?php echo $row["PRO_IMAGEN"]; ?>" class="card-img-top" alt="..." widht="100%" height="200px">
   <div class="card-body">
     <span><?php echo $row["PRO_NOMBRE"]."<br>";?></span>
     <span class="text-primary"><?php echo "$".$row["PRO_PRECIO"];?></span>
-    <a href="#" class="btn text-light" style="float:right;background:rgb(167,66,66);"> <i class="fas fa-shopping-cart"></i> AGREGAR AL CARRO</a>
+    <a href="descripcion.php?PRO_ID=<?php echo $row["PRO_ID"]; ?>" class="btn text-light" style="float:right;background:rgb(167,66,66);">  Descripcion</a>
+  </div>
+</div></div>
+        <div class="index-item"> <?php if($row = mysqli_fetch_assoc($result))?>
+      <div class="card" style="height:300px;">
+  <img src="Archivos/images/imagenlentes/<?php echo $row["PRO_IMAGEN"]; ?>" class="card-img-top" alt="..." widht="100%" height="200px">
+  <div class="card-body">
+    <span><?php echo $row["PRO_NOMBRE"]."<br>";?></span>
+    <span class="text-primary"><?php echo "$".$row["PRO_PRECIO"];?></span>
+    <a href="descripcion.php?PRO_ID=<?php echo $row["PRO_ID"]; ?>" class="btn text-light" style="float:right;background:rgb(167,66,66);">  Descripcion</a>
   </div>
 </div></div>
       </div>

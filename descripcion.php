@@ -23,6 +23,7 @@
     $valor = $_GET['PRO_ID'];
     $sql = "SELECT * FROM PRODUCTO WHERE PRO_ID = $valor ";
     $consulta = mysqli_query($connect,$sql);
+    
 
 ?>
 <nav class="navbar navbar-expand-lg indexnav sticky-top"  >
@@ -40,16 +41,92 @@
     </div>
   </nav>
 
-    <?php if($row = mysqli_fetch_assoc($consulta))?>
+    <?php if($row = mysqli_fetch_assoc($consulta)):
+    
+    $idmarca = $row["MAR_ID"];
+    $sql1 = "SELECT * FROM MARCA_PRODUCTO WHERE MAR_ID = $idmarca ";
+    $consulta1 = mysqli_query($connect,$sql1);
+    if($rowmarca = mysqli_fetch_assoc($consulta1)):
+    
+    
+    
+    ?>
+  <div class="container mt-5">
     <div class="row">
         <div class="col">
-        <img src="Archivos/images/imagenlentes/<?php echo $row["PRO_IMAGEN"];?>" alt="">
+          <div class="contieneimg"><img src="Archivos/images/imagenlentes/<?php echo $row["PRO_IMAGEN"];?>" alt="" height="350px;" class="imagendes">
+        </div>
         </div>
         <div class="col">
-        <p><?php echo $row["PRO_NOMBRE"]."<br>";?></p>
-        <p class="text-primary"><?php echo "$".$row["PRO_PRECIO"];?></p>
-        <p class=""><?php echo "Descripcion = ".$row["PRO_DESCRIPCION"];?></p>
+        <table class="table ">
+        <thead class="thead-dark">
+    <tr>
+      <th scope="col">Caracteristicas del producto</th> 
+    </tr>
+  </thead>
+        <tbody>
+        <tr>
+        <th> <?php echo "Nombre = ".$row["PRO_NOMBRE"]; ?></th>
+           
+        </tr>
+        <tr>
+            <th><?php echo "Marca = ".$rowmarca["MAR_NOMBRE"]; ?></th>
+        </tr>
+        <tr>
+            <th><?php echo "Stock = ".$row["PRO_CANTIDAD"]; ?></th>
+        </tr>
+        <tr>
+            <th><?php echo "Marco = ".$row["PRO_MARCO"]; ?></th>
+        </tr>
+        <tr>
+            <th><?php echo "Color del marco = ".$row["PRO_MARCOLOR"]; ?></th>
+        </tr>
+        <tr>
+            <th><?php echo "Material = ".$row["PRO_MATERIAL"]; ?></th>
+        </tr>
+        <tr>
+           <th><?php echo "Genero = ".$row["PRO_GENERO"]; ?></th> 
+        </tr>
+        <tr>
+            <th><?php echo "Edad = ".$row["PRO_EDAD"]; ?></th>
+        </tr>
+        <tr>
+            <th class="text-primary"><?php echo "Valor = CLP $".$row["PRO_PRECIO"]; ?></th>
+        </tr>
+        <tr>
+        <th class="text-success"><a  href=""> Agregar al Carro <i class="fas fa-shopping-cart"></i></a></th>
+        </tr>
+        </tbody>
+        </table>
         </div>
     </div>
+    <?php 
+  endif;
+  endif;
+  ?>
+  </div>
+  <footer class="row mt-5 mx-auto " style="height: 200px;width: 100%;">
+          <div class="col"></div>
+          <div class="col mt-3">
+            <p class="text-center"></p> 
+            <p class="lead text-light text-center">OpticaX</p>
+          </div>
+            <div class="col mt-3"style="">
+              
+            </div>
+            <div class="col mt-3">
+            <h3 class="lead mt-2 text-light font-weight-bold ">Contacto</h3>
+            <hr class="hrfooter">
+              <p class=" font-weight-light text-light"><i class="fas fa-phone text-light fa-lg"></i> Telefono</p>
+              <p class=" font-weight-light text-light"><i class="fas fa-map-marker-alt text-light fa-lg"></i> Ubicacion</p>
+               
+            </div>
+            <div class="col mt-3">
+            <h3 class="lead mt-2 text-light font-weight-bold">Redes Sociales</h3>
+            <hr class="hrfooter">
+              <p class="font-weight-light text-light"><i class="fab fa-facebook text-light fa-lg "> </i> Facebook</p> 
+               <p class="font-weight-light text-light"><i class="fab fa-instagram text-light fa-lg "> </i> Instagram</p>
+            </div>
+      </footer>
 </body>
 </html>
