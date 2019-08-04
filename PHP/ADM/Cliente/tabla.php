@@ -45,7 +45,7 @@
                 
               */ 
 		
-                $sql="SELECT CLI_RUT , CLI_NOMBRE, CLI_PATERNO,CLI_MATERNO,CIUDAD.CIU_NOMBRE,CLI_DIRECCION,CLI_TELEFONO,CLI_CORREO,CLI_PASS 
+                $sql="SELECT CLI_RUT , CLI_NOMBRE, CLI_PATERNO,CLI_MATERNO,CIUDAD.CIU_NOMBRE,CLI_DIRECCION,CLI_TELEFONO,CLI_CORREO,CLI_PASS ,CLIENTE.CIU_ID
                 FROM CLIENTE JOIN CIUDAD ON CIUDAD.CIU_ID=CLIENTE.CIU_ID";
              
 
@@ -53,7 +53,7 @@
 				while($ver=mysqli_fetch_row($result)){ 
 
                     //$datos=$ver[0]."||".$ver[1];
-                    $datos=$ver[0]."||".$ver[1]."||".$ver[2]."||".$ver[3]."||".$ver[4]."||".$ver[5]."||".$ver[6]."||".$ver[7]."||".$ver[8];
+                    $datos=$ver[0]."||".$ver[1]."||".$ver[2]."||".$ver[3]."||".$ver[4]."||".$ver[5]."||".$ver[6]."||".$ver[7]."||".$ver[8]."||".$ver[9];
 
 			 ?>
 
