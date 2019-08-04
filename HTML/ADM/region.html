@@ -12,6 +12,7 @@
         <link rel="stylesheet" href="../../CSS/style.css">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity ="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
         <script src="../../Librerias/js/jquery-3.2.1.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="../Usuario/css/style.css">
     
     
         <script src="../../JS/ADM/agregar_region.js"></script>
@@ -99,13 +100,9 @@
                            <a href="../ADM/rol1.html"><i class="menu-icon fas fa-user-tag"></i>Roles </a>
                       </li>
     
-                           <li>
-                          <a href="../ADM/listado_orden.html"><i class="menu-icon fas fa-clipboard-list"></i>Listado Orden</a>
-                          </li>
-                      
-                          <li style="margin-bottom:100px;">
+                      <li style="margin-bottom:100px;">
                            <a href="../ADM/estado_orden.html"> <i class="menu-icon fas fa-envelope"></i>Estado de Orden </a>
-                          </li>
+                      </li>
     
                                   
          
@@ -226,11 +223,16 @@
                 <!--DATOS QUE SEÁN AGREGADOS-->
                 Código Región:
                 <input type="text" class="form-control" id="codigo" placeholder="Código">
+                <div class="error codigovacio">Codigo no puede estar vacío</div>
+                <br>
                 Nombre Región:
                 <input type="text" id="nombre"class="form-control" placeholder="Nombre Región:">
+                <div class="error nomvacioA">Nombre no puede estar vacío</div>
+                <br>
+
                 Seleccionar País:
                 <select style="font-size:14px;" class="form-control" id="pais">
-                  <option>Estado 1</option>
+                
                 </select>
             </div>
             <div class="modal-footer">
@@ -259,6 +261,8 @@
                     <input type="text" class="form-control"  id="codigou" placeholder="Código" disabled>
                     Nombre Región:
                     <input type="text" class="form-control"  id="nombreu" placeholder="Nombre Región:">
+                    <div class="error nomvacioE">Nombre no puede estar vacío</div>
+                    <br>
                     Seleccionar País:
                     <select class="form-control" id="paisu">
                     <option>Estado 1</option>
