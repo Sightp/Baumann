@@ -58,7 +58,7 @@
       <div class="navbar-nav justify-content-end">
         <a style="color:white;"class="nav-item nav-link active" href="index.php">Inicio <span class="sr-only">(current)</span></a>
         <a style="color:white"class="nav-item nav-link " href="productos.php">Productos</a>
-        <a style="color:white;"class="nav-item nav-link " href="HTML/Usuario/Registro.html">Registro</a>
+        <a style="color:white;"class="nav-item nav-link " href="HTML/Usuario/registro.html">Registro</a>
         <a style="color:white;"class="nav-item nav-link loginbutton " href="PHP/Login/login.php">Iniciar Sesion</a>
       </div>
     </div>
