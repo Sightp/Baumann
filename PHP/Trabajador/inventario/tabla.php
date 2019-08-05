@@ -22,10 +22,10 @@ $conexion= conexion();
             </thead>
             <tbody>
             <?php
-             $sql="SELECT pro_id,pro_nombre,pro_precio,pro_cantidad,pro_imagen,pro_marco,pro_marcolor,
-             pro_material,pro_genero,pro_edad,marca_producto.mar_nombre
-                  FROM producto
-                  JOIN marca_producto where producto.mar_id=marca_producto.mar_id";
+             $sql="SELECT PRO_ID,PRO_NOMBRE,PRO_PRECIO,PRO_CANTIDAD,PRO_IMAGEN,PRO_MARCO,PRO_MARCOLOR,
+             PRO_MATERIAL,PRO_GENERO,PRO_EDAD,MARCA_PRODUCTO.MAR_NOMBRE
+                  FROM PRODUCTO
+                  JOIN MARCA_PRODUCTO WHERE PRODUCTO.MAR_ID=MARCA_PRODUCTO.MAR_ID";
              $result=mysqli_query($conexion,$sql);
              while($ver=mysqli_fetch_row($result)){
                $datos=$ver[0]."||".$ver[1]."||".$ver[2]."||".$ver[3]."||".$ver[4]."||".$ver[5]."||".$ver[6]."||".$ver[7]."||".$ver[8]."||".$ver[9]."||".$ver[10];
