@@ -5,7 +5,7 @@ $conexion= conexion();
  $id=$_POST['idrol'];
  $descripcion=$_POST['desc_rol'];
 
- $sql="INSERT INTO rol(ROL_ID,ROL_TIPO) 
+ $sql="INSERT INTO ROL(ROL_ID,ROL_TIPO) 
  VALUES ('$id','$descripcion')";
 
  echo $result=mysqli_query($conexion,$sql);
