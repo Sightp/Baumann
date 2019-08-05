@@ -1,0 +1,302 @@
+
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Administrador - OpticaX</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.0/normalize.min.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="../../CSS/style.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity ="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+        <script src="../../Librerias/js/jquery-3.2.1.min.js"></script>
+        
+        <link rel="stylesheet" type="text/css" href="../Usuario/css/style.css">
+        <script src="../../JS/ADM/rol/validacionesrol.js"></script> 
+        <script src="../../JS/ADM/rol/validacioneditarrol.js"></script> 
+        <script src="../../JS/ADM/rol/funcionesrol.js"></script>
+    
+    
+        <link rel="stylesheet" href="../../Librerias/alertifyjs/css/themes/default.css">
+        <link rel="stylesheet" href="../../Librerias/alertifyjs/css/alertify.css">
+        <script src="../../Librerias/alertifyjs/alertify.js"></script>
+        <link rel="stylesheet" href="../../CSS/crud.css">
+        <link href="https://fonts.googleapis.com/css?family=Oswald&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+        <!--datatables-->
+        <link rel="stylesheet" href="../../Librerias/datatable/bootstrap4/bootstrap.css">
+        <link rel="stylesheet" href="../../Librerias/datatable/bootstrap4/dataTables.bootstrap4.min.css">
+        <script src="../../Librerias/datatable/bootstrap4/jquery.dataTables.min.js"></script>
+        <script src="../../Librerias/datatable/bootstrap4/dataTables.bootstrap4.min.js"></script>
+     
+        
+        <script src="../../PHP/ADM/crud_region/eliminar_region.php"></script>
+    
+    
+    
+    
+    
+    </head>
+
+<body>
+     <!-- Left Panel -->
+     <aside id="left-panel" class="left-panel">
+            <nav class="navbar navbar-expand-sm navbar-default">
+                <div id="main-menu" class="main-menu collapse navbar-collapse">
+                    <ul class="nav navbar-nav">
+        
+                        <li class="menu-title"font-size:13px;>Bienvenido, Admin</li>
+        
+                        <li class="menu-item-has-children dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> 
+                                <i class="menu-icon fa fa-users"></i>Usuarios</a>
+                            <ul class="sub-menu children dropdown-menu">                            
+                                <li><i class="fas fa-user"></i><a href="../../HTML/ADM/cliente1.html">Clientes</a></li>
+                                <li><i class="fas fa-user-tie"></i></i><a href="../../HTML/ADM/Trabajador.html">Empleado</a></li>
+                            </ul>
+                        </li>
+        
+                        <li class="menu-item-has-children dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-globe-americas"></i>Localidad</a>
+                                <ul class="sub-menu children dropdown-menu">                            
+                                    <li><i class="fa fa-city"></i><a href="../../HTML/ADM/ciudad.html">Ciudad</a></li>
+                                    <li><i class="far fa-building"></i><a href="../../HTML/ADM/region.html">Región</a></li>
+                                    <li><i class="fa fa-flag"></i><a href="../../HTML/ADM/pais.html">País</a></li>
+        
+                                </ul>
+                            </li>
+        
+        
+                        <li>
+                                <a href="../../HTML/ADM/marca.html"> <i class="menu-icon fa fa-microscope"></i>Marcas </a>
+                        </li>
+        
+                        <li>
+                                <a href="#"> <i class="menu-icon fa fa-chart-line"></i>Estadísticas </a>
+                        </li>
+        
+                        <li>
+                                <a href="../ADM/sucursal.html"> <i class="menu-icon fa fa-building"></i>Sucursales </a>
+                        </li>
+        
+                         <li>
+                                 <a href="../ADM/proveedor.html"> <i class="menu-icon fa fa-user-tie"></i>Proveedores </a>
+                         </li>
+        
+                         <li>
+                                <a href="#"> <i class="menu-icon fa fa-shipping-fast"></i>Órdenes </a>
+                         </li>
+        
+                          <li>
+                               <a href="../ADM/inventario.html"> <i class="menu-icon fas fa-glasses"></i>Productos </a>
+                          </li>
+        
+                          <li>
+                               <a href="../ADM/movimiento.html"> <i class="menu-icon fas fa-clock"></i>Movimientos </a>
+                          </li>
+        
+                          <li>
+                               <a href="../ADM/rol1.html"><i class="menu-icon fas fa-user-tag"></i>Roles </a>
+                          </li>
+        
+                          <li style="margin-bottom:100px;">
+                               <a href="../ADM/estado_orden.html"> <i class="menu-icon fas fa-envelope"></i>Estado de Orden </a>
+                          </li>
+        
+                                      
+             
+                                           
+        
+                    </ul>
+                </div><!-- /.navbar-collapse -->
+            </nav>
+           </aside>
+    <!-- /#left-panel -->
+
+    <!-- Right Panel -->
+    <div id="right-panel" class="right-panel">
+        <!-- Header-->
+        <header id="header" class="header">
+            <div class="top-left" >
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="../ADM/admin_index.html"><span style="color:rgb(167, 66, 66); font-weight: 800; font-size:15px;
+                    font-family:'Oswald','sans-serif';letter-spacing:2px;">ÓPTICA X</span></a>
+                    <a id="menuToggle" class="menutoggle"><i class="fa fa-bars"></i></a>
+                </div>
+            </div>
+            <div class="top-right" >
+                <div class="header-menu">
+                    <div class="header-left">
+                        <button class="search-trigger"><i class="fa fa-question-circle"></i></button>
+                        <div class="form-inline">
+                            <form class="search-form">
+                                <input class="form-control mr-sm-2" type="text" placeholder="Search ..." aria-label="Search">
+                                <button class="search-close" type="submit"><i class="fa fa-close"></i></button>
+                            </form>
+                        </div>
+
+                        <div class="dropdown for-notification">
+                            <button class="btn btn-secondary dropdown-toggle" type="button" id="notification" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="fa fa-bell"></i>
+                                <span class="count bg-danger">3</span>
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="notification">
+                                <p class="red" style="text-align:center;">No tienes notificaciones.</p>
+
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="user-area">
+                        <a href="../ADM/admin_index.html" class="dropdown-toggle active" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <img class="user-avatar rounded-circle" src="../../Archivos/images/admin.png" alt="User Avatar">
+                            <span style="font-size:10px; margin-left:5px; text-transform:uppercase;font-weight:bold;color:#868e96;">Administrador</span>
+                        </a>
+
+                        <div class="user-menu dropdown-menu">
+                            <a class="nav-link" href="#"><i class="fa fa- user"></i>Mi Perfil</a>
+                            <a class="nav-link bg-danger text-white" style="border-radius:3px;" href="../../index.php"><i class="fa fa-power -off"></i>Cerrar Sesión</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </header>
+        <!-- /#header -->
+
+        <!-- Content -->
+        
+        <div class="content">
+                
+                    <!-- Sección 1 --> 
+                    <div class="container-fluid">
+                            <h1 class="text-titles" style="letter-spacing: 4px;"> 
+                                Óptica X 
+                                <small style="font-size:14px;font-weight:bold;">
+                                    <a href="#" class="flat-color-1" style="letter-spacing:0px;font-family:'Oswald','sans-serif'; font-size:14px;font-weight:bold;text-decoration:none;">inicio</a>
+                                    <i class="fas fa-long-arrow-alt-right"></i> 
+                                     <a href="#" class="flat-color-1" style="letter-spacing:0px;font-family:'Oswald','sans-serif';font-size:14px;font-weight:bold;text-decoration:none;">Roles</a>
+                                </small>
+                            </h1> 
+                    </div>
+
+                    <hr style="margin-bottom:70px;margin-top:30px;background-color:#ccc">
+                    <!-- Fin Sección 1 -->
+                    <!-- Sección 2 -->
+                    <div class="titulo-imagen">
+                        <div style="flex-grow:1;">
+                            <img src="../../Archivos/images/rol.png" class="rounded-circle" id="flex-img" alt="">
+                        </div>
+                        <div class="text-seccion2" style="flex-grow:8;">
+                            <span>Módulo de administración de Roles, acá podrás insertar, editar y eliminar distintos Roles registrados en el sistema.</span>
+                        </div>
+                    </div>
+                    <hr style="margin-bottom:70px;margin-top:70px;background-color:#ccc">
+                    <!-- Fin sección 2-->
+                    <div class="container">
+
+    
+                            <div id="tabla"></div>
+                            
+                    </div>
+                        
+        </div>
+        <!-- /.content -->
+        <div class="clearfix" style="background-color:#f1f2f7"></div>
+
+
+
+    </div>
+    <!-- /#right-panel -->
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@2.2.4/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.4/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js"></script>
+    <script src="../../JS/ADM/main.js"></script>
+</body>
+</html>
+
+<!-- MODAL PARA EDITAR DATOS-->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header btn-warning disabled">
+          <h3 class="modal-title" align="center" id="exampleModalLabel">Editar datos actuales de los roles</h3>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <!--identificador y nombre de productos-->
+            Identificador:
+            <input type="text" class="form-control" id="idroles" placeholder="Identificador de rol" disabled>
+            Descripción:
+            <div>
+                <input type="text" class="form-control" id="descripcion_rol" placeholder="Descripción" required>  
+                <div class="error descrolvacio">El campo descripción no puede estar vacío</div>   
+            </div>                 
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-warning" data-dismiss="modal" id="actualizadatos">Editar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--Modal para agregar datos-->
+   
+   <div class="modal fade" id="Modal_agregar" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header btn-primary disabled">
+          <h3 class="modal-title" align="center" id="exampleModalLabel">Agregar roles</h3>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <!--identificador y nombre de productos-->
+            Identificador:
+            <div>
+                <input type="text" class="form-control" id="idrol" placeholder="Identificador de rol" required>
+                <div class="error descrolvacio">El ID no puede estar vacío, ingrese solo números</div>   
+            </div>
+            Descripción:
+            <div>
+               <input type="text" class="form-control" id="desc_rol" placeholder="Descripción" required> 
+               <div class="error descrolvacio">El campo descripción no puede estar vacío</div>   
+            </div>   
+          </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-dismiss="modal" id="guardarnuevo">Agregar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+<!--llamado de la tabla-->
+<script type="text/javascript">
+   $(document).ready(function(){
+       $('#tabla').load('../../PHP/ADM/rol/tablarol.php');
+   });
+</script>
+
+<script type="text/javascript">
+   $(document).ready(function(){
+       $('#guardarnuevo').click(function(){
+        idrol=$('#idrol').val();
+        desc_rol=$('#desc_rol').val();
+        agregardatos(idrol,desc_rol);
+       });
+
+       $('#actualizadatos').click(function(){
+        actualizadatos();
+       });
+   });
+</script>
+</html>
+
