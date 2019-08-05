@@ -27,7 +27,7 @@
 
 ?>
 <nav class="navbar navbar-expand-lg indexnav sticky-top"  >
-    <a class="navbar-brand" href="#"> OpticaX</a>
+    <a style="color:white;" class="navbar-brand" href="#"> OpticaX</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -35,11 +35,15 @@
       <div class="navbar-nav justify-content-end">
         <a style="color:white;"class="nav-item nav-link active" href="index.php">Inicio <span class="sr-only">(current)</span></a>
         <a style="color:white"class="nav-item nav-link " href="productos.php">Productos</a>
-        <a style="color:white;"class="nav-item nav-link " href="HTML/Usuario/registro.html">Registro</a>
+        <a style="color:white;"class="nav-item nav-link " href="HTML/Usuario/Registro.html">Registro</a>
         <a style="color:white;"class="nav-item nav-link loginbutton " href="PHP/Login/login.php">Iniciar Sesion</a>
       </div>
     </div>
   </nav>
+  <div class="bannerpro ">
+                <img src="Archivos/images/ban2.jpg" width="100%" height="500" class="bannerimg">
+                <div class="bannerprocenter" style="color:black;"> DESCRIPCIÒN PRODUCTO </div>
+              </div>
 
     <?php if($row = mysqli_fetch_assoc($consulta)):
     
