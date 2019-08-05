@@ -22,7 +22,7 @@
     
     
         <script src="../../JS/Trabajador/funcioninventario.js"></script>
-    
+        <script src="../../JS/Trabajador/validacioneditarinvent.js"></script> 
     
         <link rel="stylesheet" href="../../Librerias/alertifyjs/css/themes/default.css">
         <link rel="stylesheet" href="../../Librerias/alertifyjs/css/alertify.css">
@@ -192,29 +192,50 @@
                 </button>
                 </div>
                 <div class="modal-body">
-                    <!--identificador y nombre de productos-->
-                    Identificador:
-                    <input type="text" class="form-control" id="idproducto" placeholder="Identificador o numero de modelo" disabled>
-                    Nombre:
-                    <input type="text" class="form-control" id="nombreproducto" placeholder="Nombre Producto" required>
-                    <!--precio y cantidad de productos-->
-                    Precio:
-                    <input type="text" class="form-control" id="precio" placeholder="Precio" required>
-                    Cantidad:
-                    <input type="text" class="form-control" id="cantidad" placeholder="Nombre Producto" required>
-                    <!--descripcion inventario-->
-                    Imagen:
-                    <input type="text" class="form-control" id="imagen" placeholder="nombre o ruta" required>      
-                    Tipo de marco:
-                    <input type="text" class="form-control" id="marcoproduc" placeholder="Tipo de marco" required>
-                    Color del marco:
-                    <input type="text" class="form-control" id="color" placeholder="Color del marco" required>
-                    Material del marco:
-                    <input type="text" class="form-control" id="material" placeholder="Material" required>
-                    Genero asociado:
-                    <input type="text" class="form-control" id="genero" placeholder="Genero" required>
-                    Rango de edad:
-                    <input type="text" class="form-control" id="edad" placeholder="Rango de edad" required>                   
+                   <!--identificador y nombre de productos-->
+            Identificador:
+            <input type="text" class="form-control" id="idproducto" placeholder="Identificador o numero de modelo" disabled>
+            Nombre:
+            <div>
+            <input type="text" class="form-control" id="nombreproducto" placeholder="Nombre Producto" required>
+            <div class="error nomvacio">El nombre no puede estar vacío</div>
+            </div>
+             <!--precio y cantidad de productos-->
+            Precio:
+            <input type="text" class="form-control" id="precio" placeholder="Precio" required>
+            Cantidad:
+            <input type="text" class="form-control" id="cantidad" placeholder="Nombre Producto" required>
+            <!--descripcion inventario-->
+            Imagen:
+            <div>
+            <input type="text" class="form-control" id="imagen" placeholder="nombre o ruta" required> 
+            <div class="error imgvacio">El dato de la imagen no puede estar vacío</div>
+            </div>     
+            Tipo de marco:
+            <div>
+            <input type="text" class="form-control" id="marcoproduc" placeholder="Tipo de marco" required>
+            <div class="error marcovacio">El dato del marco no puede estar vacío</div>
+            </div>
+            Color del marco:
+            <div>
+            <input type="text" class="form-control" id="color" placeholder="Color del marco" required>
+            <div class="error colorvacio">El color del marco no puede estar vacío</div>
+            </div>
+            Material del marco:
+            <div>
+            <input type="text" class="form-control" id="material" placeholder="Material" required>
+            <div class="error materialvacio">El material del marco no puede estar vacío</div>
+            </div>
+            Genero asociado:
+            <div>
+            <input type="text" class="form-control" id="genero" placeholder="Genero" required>
+            <div class="error generovacio">El género del marco no puede estar vacío</div>
+            </div>
+            Rango de edad:
+            <div>
+            <input type="text" class="form-control" id="edad" placeholder="Rango de edad" required>
+            <div class="error edadvacio">La edad no puede estar vacía, ingrese un dato ej.adulto</div>
+            </div>                 
                 </div>
                 <div class="modal-footer">
                 <button type="button" class="btn btn-warning" data-dismiss="modal" id="actualizadatos">Editar</button>
