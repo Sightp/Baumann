@@ -22,6 +22,8 @@
     
     
         <script src="../../JS/Trabajador/marca/agregar_marca.js"></script>
+        <script src="../../JS/Trabajador/marca/validaciones.js"></script>
+
     
     
         <link rel="stylesheet" href="../../Librerias/alertifyjs/css/themes/default.css">
@@ -200,9 +202,13 @@
             <!--DATOS DE ORDEN QUE SERÁN EDITADOS-->
             Codigo Marca:
             <input type="text" class="form-control"  id="codigou" placeholder="Código" disabled>
-            Nombre Marca:
+            Nombre Marca (*):
             <input type="text" class="form-control"  id="nombreu" placeholder="Nombre Marca:">
-           
+            <small id="NOMBRE_MARCA_VACIO" style="color:red">* El nombre  es requerido</small></br>
+            <small id="NOMBRE_MARCA_MAX" style="color:red">* El nombre debe tener  menos de 10 caracteres</small>
+            
+            <small id="datos" style="color:red">(*) Datos obligatorios</small>
+
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-warning" data-dismiss="modal" id="actualizardatos">Editar</button>
