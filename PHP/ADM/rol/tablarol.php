@@ -16,8 +16,8 @@ $conexion= conexion();
             </thead>
             <tbody>
             <?php
-             $sql="SELECT rol_id, rol_tipo
-                  FROM rol";
+             $sql="SELECT ROL_ID, ROL_TIPO
+                  FROM ROL";
              $result=mysqli_query($conexion,$sql);
              while($ver=mysqli_fetch_row($result)){
                $datos=$ver[0]."||".$ver[1];
