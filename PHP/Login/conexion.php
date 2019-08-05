@@ -1,10 +1,11 @@
 <?php
-        $usuario = "root";
-        $password = "";
-        $db = "grupo4bd";
-        $servidor = "localhost";
-        $connect = mysqli_connect($servidor,$usuario,$password,$db) or die("Error al conectar db".mysqli_error());
+      		$servidor="localhost";
+			$usuario="grupo4";
+			$password="grupo4optica";
+			$bd="grupo4";
+        $connect = mysqli_connect($servidor,$usuario,$password,$bd) or die("Error al conectar db".mysqli_error());
         return $connect;
+
 
 
 ?>
