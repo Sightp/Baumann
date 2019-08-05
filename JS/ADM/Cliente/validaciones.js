@@ -306,8 +306,8 @@ $("#rut_cliente").blur(function() {
       if ( largo <2 )
       {
        
-        $('.rutinvalido').show();
-        Condicionrut=0;
+        $('#AGREGAR_RUT_VALIDO').show();
+        codigo_rut_vacio=0;
         return false;
       }
       for ( i=0; i <crut.length ; i++ )
@@ -357,12 +357,12 @@ $("#rut_cliente").blur(function() {
       {
        
         $('#AGREGAR_RUT_VALIDO').show();
-        Condicionrut=0;
+        codigo_rut_vacio=0;
         return false;
       }
       //alert('El Rut Ingresado es Correcto!')
       $('#AGREGAR_RUT_VALIDO').hide();
-      Condicionrut=1;
+      codigo_rut_vacio=1;
       return true;
 
     }
